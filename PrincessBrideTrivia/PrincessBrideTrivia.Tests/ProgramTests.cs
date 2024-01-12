@@ -29,7 +29,7 @@ public class ProgramTests
     [TestMethod]
     [DataRow("1", true)]
     [DataRow("2", false)]
-    public void DisplayResult_ReturnsTrueIfCorrect(string userGuess, bool expectedResult)
+    public void DisplayResultReturnsTrueIfCorrect(string userGuess, bool expectedResult)
     {
         // Arrange
         Question question = new();
