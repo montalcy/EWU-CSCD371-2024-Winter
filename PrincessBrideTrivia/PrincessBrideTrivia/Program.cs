@@ -21,7 +21,7 @@ public class Program
 
     public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
     {
-        return (numberCorrectAnswers / numberOfQuestions * 100) + "%";
+        return ((float)numberCorrectAnswers / (float)numberOfQuestions * 100) + "%";
     }
 
     public static bool AskQuestion(Question question)
@@ -79,7 +79,7 @@ public class Program
 
             string correctAnswerIndex = lines[lineIndex + 4];
 
-            Question question = new Question();
+            Question question = new();
             question.Text = questionText;
             question.Answers = new string[3];
             question.Answers[0] = answer1;
