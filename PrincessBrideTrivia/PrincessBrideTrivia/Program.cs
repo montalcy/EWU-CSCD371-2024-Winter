@@ -22,7 +22,11 @@ public class Program
     public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
     {
         double correctCalc = ((double)numberCorrectAnswers / (double)numberOfQuestions * 100);
-        return correctCalc.ToString("##.#") + "%";
+        if (correctCalc > 0)
+        {
+            return correctCalc.ToString("##.#") + "%";
+        }
+        return correctCalc + "%";
     }
 
     public static bool AskQuestion(Question question)
