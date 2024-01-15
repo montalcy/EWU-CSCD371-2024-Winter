@@ -46,11 +46,11 @@ public class Program
     {
         if (userGuess == question.CorrectAnswerIndex)
         {
-            Console.WriteLine("Correct");
+            Console.WriteLine("Correct\n");
             return true;
         }
 
-        Console.WriteLine("Incorrect");
+        Console.WriteLine("Incorrect\n");
         return false;
     }
 
