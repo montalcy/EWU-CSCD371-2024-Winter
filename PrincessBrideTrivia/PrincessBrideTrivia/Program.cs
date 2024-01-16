@@ -42,8 +42,22 @@ public class Program
         return Console.ReadLine();
     }
 
+    public static bool AreYouSure(String answer)
+    {
+        Console.WriteLine("Are you sure about your answer? Y OR N");
+        if(Console.ReadLine() == "Y")
+        {
+            return true;
+        }
+        return false;
+    }
     public static bool DisplayResult(string userGuess, Question question)
     {
+        if(AreYouSure(userGuess) == false)
+        {
+            Console.WriteLine("Choose Again: ");
+            userGuess = Console.ReadLine();
+        }
         if (userGuess == question.CorrectAnswerIndex)
         {
             Console.WriteLine("Correct\n");
