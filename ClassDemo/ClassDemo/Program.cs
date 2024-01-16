@@ -1,9 +1,19 @@
-﻿namespace ClassDemo;
-
- public class Program
+﻿namespace ClassDemo
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Hello, World!");
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+
+        public bool Login(string username, string password)
+        {
+            if (username == "Inigo Montoya" && password == "goodpassword")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
