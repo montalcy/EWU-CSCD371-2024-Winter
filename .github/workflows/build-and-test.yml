@@ -11,3 +11,7 @@ jobs:
       working-directory: './PrincessBrideTrivia/'
       check-formatting: false
       dotnet-build-enforce-code-style: false
+      add-editorconfig: false
+      add-analyzers: false
+      enable-net-analyzers: false
+      enable-nullability: false
