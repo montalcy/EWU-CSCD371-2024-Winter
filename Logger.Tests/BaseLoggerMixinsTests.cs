@@ -14,11 +14,22 @@ public class BaseLoggerMixinsTests
         // Arrange
 
         // Act
-        //BaseLoggerMixins.Error(null, "");
+        BaseLoggerMixins.Error(null, "");
 
         // Assert
     }
 
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentNullException))]
+    public void Warning_WithNullLogger_ThrowsException()
+    {
+        // Arrange
+
+        // Act
+        BaseLoggerMixins.Warning(null, "");
+
+        // Assert
+    }
     [TestMethod]
     public void Error_WithData_LogsMessage()
     {
