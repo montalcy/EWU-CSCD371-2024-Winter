@@ -10,7 +10,7 @@ public class LogFactory
     BaseLogger logger;
 
     public BaseLogger CreateLogger(string className)
-    {
+    { 
         FileLogger logger = new FileLogger(filePath){ClassName = className};
         return logger;
     }

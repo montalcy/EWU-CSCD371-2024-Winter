@@ -10,7 +10,7 @@ public class FileLogger : BaseLogger
 
     public override void Log(LogLevel logLevel, string message)
     {
-        string logEntry = $"{System.DateTime.Now} {ClassName} {logLevel}: {message}";
+        string logEntry = $"{System.DateTime.Now} {nameof(ClassName)} {logLevel}: {message}";
 
     }
 }
