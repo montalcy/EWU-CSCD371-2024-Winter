@@ -7,7 +7,7 @@ public class LogFactory
 
 {
     private string? filePath;
-    readonly BaseLogger? logger;
+    
 
     public BaseLogger CreateLogger(string className)
     { 
