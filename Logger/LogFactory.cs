@@ -1,18 +1,18 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Dynamic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Logger;
 
 public class LogFactory
 
 {
-    private string filePath; 
-    //BaseLogger logger = new LogFactory();
-    
+    private string filePath;
+    BaseLogger logger;
+
     public BaseLogger CreateLogger(string className)
     {
-        //public override string ClassName { get { return className; } }
-        
-        return null;
+        logger.ClassName = className;
+        return logger;
     }
 
    
