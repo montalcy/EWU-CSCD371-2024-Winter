@@ -1,11 +1,11 @@
 namespace Logger;
 public class FileLogger : BaseLogger
 {
-    private string filePath;
+    private readonly string filePaths;
 
     public FileLogger(string filePath)
     {
-        filePath = filePath;
+        filePaths = filePath;
     }
 
     public override void Log(LogLevel logLevel, string message)
