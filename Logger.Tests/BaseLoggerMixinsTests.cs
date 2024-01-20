@@ -71,6 +71,21 @@ public class BaseLoggerMixinsTests
         Assert.AreEqual("Message 42", logger.LoggedMessages[0].Message);
     }
 
+    [TestMethod]
+    public void Warning_WithData_LogsMessage()
+    {
+        // Arrange
+        var logger = new TestLogger();
+
+        // Act
+        logger.Warning("Test Warning {0}", 20);
+
+        // Assert
+        Assert.AreEqual(1, logger.LoggedMessages.Count);
+        Assert.AreEqual(LogLevel.Warning, logger.LoggedMessages[0].LogLevel);
+        Assert.AreEqual("Test Warning 20", logger.LoggedMessages[0].Message);
+    }
+
 }
 
 public class TestLogger : BaseLogger
