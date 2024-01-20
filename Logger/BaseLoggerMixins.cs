@@ -8,27 +8,37 @@ public static class BaseLoggerMixins
     {
         if (logger != null)
         {
+            logger.Log(LogLevel.Error, string.Format(message, arguments));
+        }
+        else
+        {
             throw new ArgumentNullException("logger null");
         }
-        logger.Log(LogLevel.Error, string.Format(message, arguments));
+        
     }
 
     public static void Warning(this BaseLogger logger, string message, params object[] arguments)
     {
         if (logger != null)
         {
+            logger.Log(LogLevel.Warning, string.Format(message, arguments));
+        }
+        else
+        {
             throw new ArgumentNullException("logger null");
         }
-        logger.Log(LogLevel.Warning, string.Format(message, arguments));
     }
 
     public static void Information(this BaseLogger logger, string message, params object[] arguments)
     {
         if (logger != null)
         {
+            logger.Log(LogLevel.Information, string.Format(message, arguments));
+        }
+        else
+        {
             throw new ArgumentNullException("logger null");
         }
-        logger.Log(LogLevel.Information, string.Format(message, arguments));
     }
 
     public static void Debug(this BaseLogger logger, string message, params object[] arguments)
