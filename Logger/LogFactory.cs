@@ -5,6 +5,7 @@ namespace Logger;
 public class LogFactory
 
 {
+    private string filePath; 
     //BaseLogger logger = new LogFactory();
     
     public BaseLogger CreateLogger(string className)
@@ -18,6 +19,6 @@ public class LogFactory
 
     public void ConfigureFileLogger(string filePath)
     {
-        
+        this.filePath = filePath;
     }
 }
