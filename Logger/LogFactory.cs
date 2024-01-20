@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Logger;
 
-public class LogFactory : BaseLogger
+public class LogFactory
 
 {
     private string filePath;
@@ -11,7 +11,7 @@ public class LogFactory : BaseLogger
 
     public BaseLogger CreateLogger(string className)
     {
-        logger.ClassName = className;
+        FileLogger logger = new FileLogger(filePath){ClassName = className};
         return logger;
     }
 
