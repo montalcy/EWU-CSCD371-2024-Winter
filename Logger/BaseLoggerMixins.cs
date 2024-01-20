@@ -43,7 +43,7 @@ public static class BaseLoggerMixins
 
     public static void Debug(this BaseLogger logger, string message, params object[] arguments)
     {
-        if (logger != null)
+        if (logger == null)
         {
             throw new ArgumentNullException("logger null");
         }
