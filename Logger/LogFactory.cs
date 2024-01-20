@@ -11,7 +11,7 @@ public class LogFactory
 
     public BaseLogger CreateLogger(string className)
     { 
-        FileLogger logger = new FileLogger(filePath){ClassName = className};
+        FileLogger logger = new FileLogger(filePath??"Unknown Filepath{filepath}"){ClassName = className};
         return logger;
     }
 
