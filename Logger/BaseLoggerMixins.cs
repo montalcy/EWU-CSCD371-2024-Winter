@@ -12,7 +12,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new ArgumentNullException("logger null");
+            throw new System.ArgumentNullException();
         }
         
     }
@@ -25,7 +25,9 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new ArgumentNullException("logger null");
+            
+
+            throw new System.ArgumentNullException();
         }
     }
 
@@ -37,7 +39,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new ArgumentNullException("logger null");
+            throw new System.ArgumentNullException();
         }
     }
 
@@ -45,7 +47,7 @@ public static class BaseLoggerMixins
     {
         if (logger == null)
         {
-            throw new ArgumentNullException("logger null");
+            throw new System.ArgumentNullException();
         }
         logger.Log(LogLevel.Debug, string.Format(message, arguments));
     }
