@@ -6,8 +6,8 @@ namespace Logger;
 public class LogFactory
 
 {
-    private string filePath;
-    BaseLogger logger;
+    private string? filePath;
+    readonly BaseLogger? logger;
 
     public BaseLogger CreateLogger(string className)
     { 
