@@ -9,15 +9,12 @@ public class FileLoggerTests
     public void createLogger_NotConfigured_ReturnsNull()
     {
         // Arrange
-        var logger = new TestLogger();
+        var logger = new LogFactory();
 
         // Act
-        LogFactory.CreateLogger(null);
-        logger.Error("Message {0}", 42);
+        //logger.CreateLogger(null);
 
         // Assert
-        Assert.AreEqual(1, logger.LoggedMessages.Count);
-        Assert.AreEqual(LogLevel.Error, logger.LoggedMessages[0].LogLevel);
-        Assert.AreEqual("Message 42", logger.LoggedMessages[0].Message);
+        Assert.AreEqual(null, logger.CreateLogger(null));
     }
 }
