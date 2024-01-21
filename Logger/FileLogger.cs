@@ -8,25 +8,24 @@ public class FileLogger : BaseLogger
 
     public FileLogger(string filePath)
     {
-        if (!File.Exists(filePath))
+        this.filePaths = filePath;
+        FileStream stream = new(filePaths + ".txt", FileMode.Create);
+        StreamWriter writer = new(stream); 
+
+        if (File.Exists(filePath))
         {
-            // Create a file to write to.
-            StreamWriter sw = File.CreateText(filePath);
+            writer.WriteLine(" hello ");
         }
-        filePaths = filePath;
+        //filePaths = filePath;
     }
 
     public override void Log(LogLevel logLevel, string message)
     {
         string logEntry = $"{System.DateTime.Now} {nameof(ClassName)} {logLevel}: {message}";
-        using (StreamReader sr = File.OpenText(filePaths))
-        {
-            string s;
-            //Write to the file the logEntry
-            while ((s = sr.ReadLine()) != null)
-            {
-                Console.WriteLine(logEntry);
-            }
+        FileStream stream = new(filePaths + ".txt", FileMode.Open);
+        using (StreamWriter sr = new(stream))
+        {  
+                sr.WriteLine(logEntry);
         }
     
     }
