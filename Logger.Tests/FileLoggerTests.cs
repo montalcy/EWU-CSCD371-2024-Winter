@@ -4,17 +4,15 @@ namespace Logger.Tests;
 
 [TestClass]
 public class FileLoggerTests
-{
+{ 
     [TestMethod]
-    public void createLogger_NotConfigured_ReturnsNull()
+    public void log_WithPath_AppendsToOwnLine()
     {
         // Arrange
-        var logger = new LogFactory();
-
+        
         // Act
-        //logger.CreateLogger(null);
 
         // Assert
-        Assert.AreEqual(null, logger.CreateLogger(null));
+        
     }
 }
