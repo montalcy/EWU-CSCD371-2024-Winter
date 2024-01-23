@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>11.0</LangVersion>
     <Nullable>enable</Nullable>
-    <EnableNETAnalyzers>enable</EnableNETAnalyzers>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
