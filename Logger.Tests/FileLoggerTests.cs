@@ -14,11 +14,12 @@ public class FileLoggerTests
     {
         string fileName = "file.txt";
         // Arrange
-        FileLogger fileLogger = new FileLogger(fileName);
+        string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
+        FileLogger fileLogger = new FileLogger(virtualPath);
 
         // Act
         fileLogger.Log(LogLevel.Warning, "Warnings");
-        string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", "file.txt");
+        
         string logFile = "";
         //using (StreamReader sr = File.OpenText(fileName))
         //{
@@ -30,7 +31,7 @@ public class FileLoggerTests
         //}
         //}
         //string firsLine= sr.ReadToEnd();
-        string read="";
+        string read = "";
         string s;
         if (File.Exists(virtualPath))
         {
