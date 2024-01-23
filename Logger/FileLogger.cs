@@ -15,7 +15,7 @@ public class FileLogger : BaseLogger
             File.Delete("file.txt");
         }
         FileStream fs = File.Create(filePaths) ;
-
+        fs.Close();
             
     }
 
@@ -51,5 +51,4 @@ public class FileLogger : BaseLogger
 
 
 
-}
 }
