@@ -10,13 +10,13 @@ public class FileLogger : BaseLogger
     {
         this.filePaths = filePath;
 
-        if (File.Exists(filePaths))
-        {
-            File.Delete("file.txt");
-        }
-        FileStream fs = File.Create(filePaths) ;
-        fs.Close();
-            
+        //if (File.Exists(filePaths))
+        //{
+        //    File.Delete("file.txt");
+        //}
+        //// Don't really need but keeping
+        //FileStream fs = File.Create(filePaths) ;
+        //fs.Close();
     }
 
     public override void Log(LogLevel logLevel, string message)
@@ -35,7 +35,7 @@ public class FileLogger : BaseLogger
         }
         else if (File.Exists(path))
         {
-            using (StreamWriter sw = File.CreateText(path))
+            using (StreamWriter sw = File.AppendText(path))
             {
                 sw.WriteLine(logEntry);
             }
