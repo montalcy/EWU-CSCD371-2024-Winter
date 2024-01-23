@@ -21,7 +21,7 @@ public class FileLogger : BaseLogger
 
     public override void Log(LogLevel logLevel, string message)
     {
-        string logEntry = $"{System.DateTime.Now} {ClassName} {logLevel}: {message}";
+        string logEntry = $"{System.DateTime.Now} {nameof(FileLogger)} {logLevel}: {message}";
 
         // FileStream stream = new(filePaths + ".txt", FileMode.Open);
         string path = Path.Combine("C:\\Users\\Cynthia\\Desktop", "file.txt");
@@ -44,12 +44,6 @@ public class FileLogger : BaseLogger
 
         }
     }
-    //using (FileStream fs, File.OpenText(filePaths));
-    //using (StreamWriter sr = File.OpenText(filePaths))
-    //{
-    //  sr.WriteLine(logEntry);
-    //sr.Dispose();
-    //}
 
 
 
