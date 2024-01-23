@@ -21,10 +21,10 @@ public class FileLogger : BaseLogger
 
     public override void Log(LogLevel logLevel, string message)
     {
-        string logEntry = $"{System.DateTime.Now} {nameof(ClassName)} {logLevel}: {message}";
+        string logEntry = $"{System.DateTime.Now} {ClassName} {logLevel}: {message}";
 
         // FileStream stream = new(filePaths + ".txt", FileMode.Open);
-        string path = Path.Combine("C:\\Users\\Cynthia\\Desktop", "test.txt");
+        string path = Path.Combine("C:\\Users\\Cynthia\\Desktop", "file.txt");
         if (!File.Exists(path))
         {
             // Create a file to write to.
