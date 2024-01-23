@@ -22,18 +22,12 @@ public class FileLoggerTests
         
         string log = $"{System.DateTime.Now} {"FileLogger"} {LogLevel.Warning}: {"Warnings"}";
         
-        string read = "";
-        //string s = "";
+        string read="";
+        
         if (File.Exists(virtualPath))
         {
             // Create a file to write to.
-            //using (StreamReader sr = File.OpenText(virtualPath))
-            //{
-            //    //while ((s = sr.ReadLine()) != null)
-            //    //{
-            //    //    read = sr.ReadLine();
-            //    //}
-            //}
+           
             StreamReader sr = File.OpenText(virtualPath);
             read = sr.ReadToEnd();
         }
