@@ -35,6 +35,8 @@ public class FileLogger : BaseLogger
         }
         else if (File.Exists(path))
         {
+            // Added this delete because of tests where it checks the first line
+            File.Delete(path);
             using (StreamWriter sw = File.AppendText(path))
             {
                 sw.WriteLine(logEntry);
