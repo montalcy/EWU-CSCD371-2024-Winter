@@ -20,19 +20,10 @@ public class FileLoggerTests
         // Act
         fileLogger.Log(LogLevel.Warning, "Warnings");
         
-        string logFile = "";
-        //using (StreamReader sr = File.OpenText(fileName))
-        //{
-        //  string line = "";
-        //while ((line = sr.ReadLine()) != null)
-        //{
-        //  Console.WriteLine(line);
-        // logFile = line + logFile;
-        //}
-        //}
-        //string firsLine= sr.ReadToEnd();
+        string log = $"{System.DateTime.Now} {"FileLogger"} {LogLevel.Warning}: {"Warnings"}";
+        
         string read = "";
-        string s = "";
+        //string s = "";
         if (File.Exists(virtualPath))
         {
             // Create a file to write to.
@@ -47,6 +38,6 @@ public class FileLoggerTests
             read = sr.ReadToEnd();
         }
         // Assert
-        Assert.AreEqual($"{System.DateTime.Now} {"FileLoggerTests"} {LogLevel.Warning}: {"Warnings"}", read);
+        Assert.AreEqual(log, read);
     }
 }
