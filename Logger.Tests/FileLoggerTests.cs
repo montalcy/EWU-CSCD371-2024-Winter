@@ -36,11 +36,11 @@ public class FileLoggerTests
         if (File.Exists(virtualPath))
         {
             // Create a file to write to.
-            using (StreamReader sw = File.OpenText(virtualPath))
+            using (StreamReader sr = File.OpenText(virtualPath))
             {
-                while ((s = sw.ReadLine()) != null)
+                while ((s = sr.ReadLine()) != null)
                 {
-                    read=sw.ReadLine();
+                    read = sr.ReadLine();
                 }
 
             }
