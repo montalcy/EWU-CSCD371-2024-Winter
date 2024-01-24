@@ -35,7 +35,7 @@ public static class BaseLoggerMixins
     {
         if (logger != null)
         {
-            logger.Log(LogLevel.Information, string.Format(message, arguments));
+            logger.Log(LogLevel.Information, message);
         }
         else
         {
@@ -49,7 +49,7 @@ public static class BaseLoggerMixins
         {
             throw new System.ArgumentNullException(null, "Debug mixin got null");
         }
-        logger.Log(LogLevel.Debug, string.Format(message, arguments));
+        logger.Log(LogLevel.Debug, message);
     }
 
 }
