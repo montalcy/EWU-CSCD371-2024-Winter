@@ -12,7 +12,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
+            throw new System.ArgumentNullException(null, "Error mixin got null");
         }
         
     }
@@ -27,7 +27,7 @@ public static class BaseLoggerMixins
         {
             
 
-            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
+            throw new System.ArgumentNullException(null, "Error mixin got null");
         }
     }
 
