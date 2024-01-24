@@ -27,7 +27,7 @@ public static class BaseLoggerMixins
         {
             
 
-            throw new System.ArgumentNullException(null, "Error mixin got null");
+            throw new System.ArgumentNullException(null, "Warning mixin got null");
         }
     }
 
@@ -39,7 +39,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
+            throw new System.ArgumentNullException(null, "Information mixin got null");
         }
     }
 
@@ -47,7 +47,7 @@ public static class BaseLoggerMixins
     {
         if (logger == null)
         {
-            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
+            throw new System.ArgumentNullException(null, "Debug mixin got null");
         }
         logger.Log(LogLevel.Debug, string.Format(message, arguments));
     }
