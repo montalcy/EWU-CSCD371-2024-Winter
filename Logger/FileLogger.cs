@@ -5,11 +5,11 @@ namespace Logger;
 public class FileLogger : BaseLogger
 {
     
-    private readonly string filePaths;
+    private readonly string _filePaths;
 
     public FileLogger(string filePath)
     {
-        this.filePaths = filePath;
+        this._filePaths = filePath;
 
         //if (File.Exists(filePaths))
         //{
@@ -44,5 +44,5 @@ public class FileLogger : BaseLogger
             }
 
         }
-    }\
+    }
 }
