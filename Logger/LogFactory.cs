@@ -19,7 +19,7 @@ public class LogFactory
         else
         {
             ConfigureFileLogger(filePaths);
-            FileLogger logger = new FileLogger(filePaths) { ClassName = className };
+            FileLogger logger = new (filePaths) { ClassName = className };
             return logger;
         }
 

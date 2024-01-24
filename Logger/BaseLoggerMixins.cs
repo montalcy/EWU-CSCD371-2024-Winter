@@ -12,7 +12,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new System.ArgumentNullException(null, nameof(logger));
+            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
         }
         
     }
@@ -27,7 +27,7 @@ public static class BaseLoggerMixins
         {
             
 
-            throw new System.ArgumentNullException(null, nameof(logger));
+            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
         }
     }
 
@@ -39,7 +39,7 @@ public static class BaseLoggerMixins
         }
         else
         {
-            throw new System.ArgumentNullException(null, nameof(logger));
+            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
         }
     }
 
@@ -47,7 +47,7 @@ public static class BaseLoggerMixins
     {
         if (logger == null)
         {
-            throw new System.ArgumentNullException(null, nameof(logger));
+            throw new System.ArgumentNullException(null, $"{nameof(logger)}");
         }
         logger.Log(LogLevel.Debug, string.Format(message, arguments));
     }
