@@ -51,7 +51,7 @@ public class BaseLoggerMixinsTests
         // Arrange
 
         // Act
-        BaseLoggerMixins.Debug(null, "");
+        BaseLoggerMixins.Debug(null!, "");
 
         // Assert
     }
