@@ -9,7 +9,7 @@ public class LogFactoryTests
     public void createLogger_NotConfigured_ReturnsNull()
     {
         // Arrange
-        LogFactory logger = new LogFactory();
+        LogFactory logger = new();
 
         // Act
 
