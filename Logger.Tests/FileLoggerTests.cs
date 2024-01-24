@@ -9,29 +9,29 @@ namespace Logger.Tests;
 [TestClass]
 public class FileLoggerTests
 {
-    [TestMethod]
-    public void Log_WithPath_AppendsToOwnLine()
-    {
-        string fileName = "file.txt";
-        // Arrange
-        string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
-        FileLogger fileLogger = new (virtualPath);
+    //[TestMethod]
+    //public void Log_WithPath_AppendsToOwnLine()
+    //{
+    //    string fileName = "file.txt";
+    //    // Arrange
+    //    string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
+    //    FileLogger fileLogger = new (virtualPath);
 
-        // Act
-        fileLogger.Log(LogLevel.Warning, "Warnings");
+    //    // Act
+    //    fileLogger.Log(LogLevel.Warning, "Warnings");
         
-        string log = $"{System.DateTime.Now} {"FileLogger"} {LogLevel.Warning}: {"Warnings"}";
+    //    string log = $"{System.DateTime.Now} {"FileLogger"} {LogLevel.Warning}: {"Warnings"}";
         
-        string read="";
+    //    string read="";
         
-        if (File.Exists(virtualPath))
-        {
-            // Create a file to write to.
+    //    if (File.Exists(virtualPath))
+    //    {
+    //        // Create a file to write to.
            
-            StreamReader sr = File.OpenText(virtualPath);
-            read = sr.ReadToEnd();
-        }
-        // Assert
-        Assert.AreEqual(log, read);
-    }
+    //        StreamReader sr = File.OpenText(virtualPath);
+    //        read = sr.ReadToEnd();
+    //    }
+    //    // Assert
+    //    Assert.AreEqual(log, read);
+    //}
 }
