@@ -10,12 +10,12 @@ namespace Logger.Tests;
 public class FileLoggerTests
 {
     [TestMethod]
-    public void log_WithPath_AppendsToOwnLine()
+    public void Log_WithPath_AppendsToOwnLine()
     {
         string fileName = "file.txt";
         // Arrange
         string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
-        FileLogger fileLogger = new FileLogger(virtualPath);
+        FileLogger fileLogger = new (virtualPath);
 
         // Act
         fileLogger.Log(LogLevel.Warning, "Warnings");

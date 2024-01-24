@@ -7,19 +7,19 @@ namespace Logger;
 public class LogFactory
 
 {
-    private string? filePaths;
+    private string? _filePaths;
 
 
     public BaseLogger? CreateLogger(string className)
     {
-        if (filePaths == null)
+        if (_filePaths == null)
         {
             return null;
         }
         else
         {
-            ConfigureFileLogger(filePaths);
-            FileLogger logger = new (filePaths) { ClassName = className };
+            ConfigureFileLogger(_filePaths);
+            FileLogger logger = new (_filePaths) { ClassName = className };
             return logger;
         }
 
@@ -29,6 +29,6 @@ public class LogFactory
 
     public void ConfigureFileLogger(string filePath)
     {
-        this.filePaths = filePath;
+        this._filePaths = filePath;
     }
 }

@@ -30,7 +30,7 @@ public class FileLogger : BaseLogger
             // Create a file to write to.
             using (StreamWriter sw = File.CreateText(path))
             {
-                sw.WriteLine(logEntry);
+                sw.WriteLineAsync(logEntry);
             }
         }
         else if (File.Exists(path))
