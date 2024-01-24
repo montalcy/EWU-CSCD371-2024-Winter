@@ -20,7 +20,7 @@ public class FileLogger : BaseLogger
         //fs.Close();
     }
 
-    public override void Log(LogLevel? logLevel, string message)
+    public override void Log(LogLevel logLevel, string message)
     {
         string logEntry = $"{System.DateTime.Now} {nameof(FileLogger)} {logLevel}: {message}";
 
