@@ -8,7 +8,7 @@ public static class BaseLoggerMixins
     {
         if (logger != null)
         {
-            logger.Log(LogLevel.Error, string.Format(message, arguments));
+            logger.Log(LogLevel.Error, message);
         }
         else
         {
@@ -21,7 +21,7 @@ public static class BaseLoggerMixins
     {
         if (logger != null)
         {
-            logger.Log(LogLevel.Warning, string.Format(message, arguments));
+            logger.Log(LogLevel.Warning,message);
         }
         else
         {
