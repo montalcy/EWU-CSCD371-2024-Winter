@@ -14,7 +14,7 @@ public class LogFactoryTests
         // Act
 
         // Assert
-        Assert.AreEqual(null!, logger.CreateLogger(null));
+        Assert.AreEqual(null!, logger.CreateLogger(null!));
     }
 
 }
