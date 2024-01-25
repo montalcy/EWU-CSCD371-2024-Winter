@@ -15,9 +15,15 @@ public class FileLoggerTests
     {
         string fileName = "file.txt";
         // Arrange
-        string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
-        FileLogger fileLogger = new (virtualPath);
+        //string virtualPath = Path.Combine("C:\\Users\\Cynthia\\Desktop", fileName);
+        //string virtualPath=System.Reflection.Assembly.GetExecutingAssembly().Location;
+        //virtualPath = Path.Combine(virtualPath, fileName);
 
+        string virtualPath = string.Join(@"\", (Environment.CurrentDirectory));
+        string path = Path.Combine(virtualPath, fileName);
+        FileLogger fileLogger = new (path);
+
+        
         // Act
         fileLogger.Log(LogLevel.Warning, "Warnings");
         
