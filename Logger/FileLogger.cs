@@ -17,20 +17,20 @@ public class FileLogger : BaseLogger
         string logEntry = $"{System.DateTime.Now} {nameof(FileLogger)} {logLevel}: {message}";
 
         // FileStream stream = new(filePaths + ".txt", FileMode.Open);
-        string path = Path.Combine("C:\\Users\\Cynthia\\Desktop", "file.txt");
-        if (!File.Exists(path))
+        //string path = Path.Combine("C:\\Users\\Cynthia\\Desktop", "file.txt");
+        if (!File.Exists(_filePaths))
         {
             // Create a file to write to.
-            using (StreamWriter sw = File.CreateText(path))
+            using (StreamWriter sw = File.CreateText(_filePaths))
             {
                 sw.WriteLineAsync(logEntry);
             }
         }
-        else if (File.Exists(path))
+        else if (File.Exists(_filePaths))
         {
             // Added this delete because of tests where it checks the first line
-            File.Delete(path);
-            using (StreamWriter sw = File.AppendText(path))
+            File.Delete(_filePaths);
+            using (StreamWriter sw = File.AppendText(_filePaths))
             {
                 sw.WriteLine(logEntry);
             }
