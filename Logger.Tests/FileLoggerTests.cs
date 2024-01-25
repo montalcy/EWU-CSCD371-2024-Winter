@@ -30,7 +30,7 @@ public class FileLoggerTests
         string log = $"{System.DateTime.Now} {"FileLogger"} {LogLevel.Warning}: {"Warnings"}";
         
         //string read="";
-        string contents = File.ReadLines(virtualPath).Last();
+        string contents = File.ReadLines(path).Last();
 
         //if (File.Exists(virtualPath))
         //{
