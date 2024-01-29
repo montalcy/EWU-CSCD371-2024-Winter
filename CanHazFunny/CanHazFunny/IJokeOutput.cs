@@ -11,7 +11,7 @@ namespace CanHazFunny
         //string Output { get; }
         public void PrintingJokeyJoke(string jokeToPrint)
         {
-            //Console.WriteLine(jokeToPrint);
+            Console.WriteLine(jokeToPrint);
         }
     }
 }
