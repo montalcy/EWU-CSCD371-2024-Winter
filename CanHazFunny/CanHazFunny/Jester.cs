@@ -8,9 +8,27 @@ namespace CanHazFunny
 {
     public class Jester : IJokeService, IJokeOutput
     {
-        public void TellJoke(JokeService joke)
+        public string GetJoke()
         {
+            throw new NotImplementedException();
+        }
 
+
+        public void PrintJokeyJoke(string jokesToPrint)
+        {
+            Console.WriteLine(jokesToPrint);
+        }
+        public void TellJoke(string joke)
+        {
+            JokeService service = new();
+            Jester clown = new();
+
+            do
+            {
+                joke = service.GetJoke();
+            } while ((!JokeService.Equals("chuck norris", StringComparison.OrdinalIgnoreCase)));
+
+            clown.PrintJokeyJoke(joke);
         }
     }
 }
