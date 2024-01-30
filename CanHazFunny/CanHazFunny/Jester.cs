@@ -9,27 +9,29 @@ namespace CanHazFunny;
 
 public class Jester
 {
+    private const string NameToAvoid = "chuck norris";
+
     // readonly IJokeOutput? output;
     private OutputtingJoke? Output;
     private JokeService? OurService;
 
-    public Jester(JokeService? serve, OutputtingJoke? output)
+    public Jester(JokeService? service, OutputtingJoke? output)
     {
-        ArgumentNullException.ThrowIfNull(serve, nameof(serve));
+        ArgumentNullException.ThrowIfNull(service, nameof(service));
         ArgumentNullException.ThrowIfNull(output, nameof(output));
-        this.Output=output;
-        this.OurService=serve;
+        this.Output = output;
+        this.OurService = service;
     }
    
 
     public void TellJoke()
     {
-        string theJoke;
+        string theJoke = "";
 
         do
         {
-          theJoke=OurService!.GetJoke();
-        } while ((!theJoke.Equals("chuck norris", StringComparison.OrdinalIgnoreCase)));
+          theJoke = OurService!.GetJoke();
+        } while (theJoke.Contains(NameToAvoid, StringComparison.OrdinalIgnoreCase));
 
         Output!.PrintingJokeyJoke(theJoke);
     }

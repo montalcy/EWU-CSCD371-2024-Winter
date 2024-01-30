@@ -7,7 +7,7 @@ public class Program
     {
         JokeService jokeService = new();
         OutputtingJoke outputtingJoke = new();
-        Jester j=new(jokeService, outputtingJoke);
+        Jester j = new(jokeService, outputtingJoke);
         j.TellJoke();
         
         //Feel free to use your own setup here - this is just provided as an example

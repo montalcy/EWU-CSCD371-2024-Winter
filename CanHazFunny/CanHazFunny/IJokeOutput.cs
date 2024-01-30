@@ -10,7 +10,4 @@ public interface IJokeOutput
 {
     //string Output { get; }
     public void PrintingJokeyJoke(string jokeToPrint);
-   // {
-     //   Console.WriteLine(jokeToPrint);
-   // }
 }
