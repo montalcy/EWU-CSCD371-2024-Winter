@@ -3,11 +3,11 @@ namespace CanHazFunny;
 
 public class Program
 {
-    static void Main(String []args)
+    static void Main(string[] args)
     {
-        JokeService jokeService = new JokeService();
-        OutputtingJoke outputtingJoke = new OutputtingJoke();
-        Jester j=new Jester(jokeService, outputtingJoke);
+        JokeService jokeService = new();
+        OutputtingJoke outputtingJoke = new();
+        Jester j=new(jokeService, outputtingJoke);
         j.TellJoke();
         
         //Feel free to use your own setup here - this is just provided as an example
