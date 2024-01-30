@@ -10,22 +10,17 @@ namespace CanHazFunny;
 public class Jester
 {
    // readonly IJokeOutput? output;
-   public IJokeOutput? Output {   get; set; }
+   private  IJokeOutput? Output {   get; set; }
    public IJokeService? OurService { get; set; }
 
-    public Jester(IJokeService serve, IJokeOutput output)
+    public Jester(IJokeService? serve, IJokeOutput? output)
     {
         ArgumentNullException.ThrowIfNull(serve, nameof(serve));
         ArgumentNullException.ThrowIfNull(output, nameof(output));
         this.Output=output;
         this.OurService=serve;
     }
-    public static string GetJoke()
-    {
-        JokeService service = new();
-        return service.GetJoke();
-
-    }
+   
 
     public void TellJoke()
     {

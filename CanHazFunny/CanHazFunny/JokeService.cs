@@ -9,16 +9,16 @@ public class JokeService : IJokeService
 
     public string GetJoke()
     {
-        HttpResponseMessage response = HttpClient.GetAsync("https://geek-jokes.sameerkumar.website/api").Result;
-        //joke = HttpClient.GetStringAsync("https://geek-jokes.sameerkumar.website/api").Result;
-       //     return joke;
+        //HttpResponseMessage response = HttpClient.GetAs).Result;
+        string joke = HttpClient.GetStringAsync("https://geek-jokes.sameerkumar.website/api").Result;
+           return joke;
        // }
        /// catch (AggregateException e)
        // {
 
        // }
-       string joke=response.Content.ReadAsStringAsync().Result;
-       return joke;
+       //string joke=response.Content.ReadAsStringAsync().Result;
+       //return joke;
     }
 
 }
