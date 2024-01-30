@@ -4,32 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CanHazFunny
+namespace CanHazFunny;
+
+
+public class Jester
 {
-    private readonly IJokeService _jokeService;
-    private readonly IJokeOutput _jokeOutput;
+   // readonly IJokeOutput? output;
+   public IJokeOutput? Output {   get; set; }
+   public IJokeService? OurService { get; set; }
 
-    public class Jester
+    public Jester(IJokeService serve, IJokeOutput output)
     {
-        private readonly IJokeService _jokeService;
-        private readonly IJokeOutput _jokeOutput;
+        ArgumentNullException.ThrowIfNull(serve, nameof(serve));
+        ArgumentNullException.ThrowIfNull(output, nameof(output));
+        this.Output=output;
+        this.OurService=serve;
+    }
+    public static string GetJoke()
+    {
+        JokeService service = new();
+        return service.GetJoke();
 
-        public Jester(IJokeOutput jokeOutput, IJokeService jokeService)
+    }
+
+    public void TellJoke()
+    {
+        string theJoke;
+
+        do
         {
-            this._jokeService = jokeService ?? throw new ArgumentNullException(nameof(jokeService));
-            this._jokeOutput = jokeOutput ?? throw new ArgumentNullException(nameof(jokeOutput));
-        }
+          theJoke=OurService!.GetJoke();
+        } while ((!JokeService.Equals("chuck norris", StringComparison.OrdinalIgnoreCase)));
 
-        public void TellJokey()
-        {
-            string joke = "";
-
-            do
-            {
-                joke = _jokeService.GetJoke();
-            } while ((JokeService.Contains("chuck norris", StringComparison.OrdinalIgnoreCase)));
-
-            clown.PrintJokeyJoke(joke);
-        }
+        Output!.PrintingJokeyJoke(theJoke);
     }
 }

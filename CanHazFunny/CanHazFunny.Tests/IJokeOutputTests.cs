@@ -1,6 +1,6 @@
 using Xunit;
 using Moq;
-using System.*;
+using System;
 
 namespace CanHazFunny.Tests;
 
