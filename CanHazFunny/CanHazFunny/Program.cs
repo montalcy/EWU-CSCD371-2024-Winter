@@ -3,11 +3,12 @@ namespace CanHazFunny;
 
 public class Program
 {
-    public static void Main(string[] args)
+    static void Main(String []args)
     {
-       
-        new Jester( new JokeService(), new OutputtingJoke()).TellJoke();
-
+        JokeService jokeService = new JokeService();
+        OutputtingJoke outputtingJoke = new OutputtingJoke();
+        Jester j=new Jester(jokeService, outputtingJoke);
+        j.TellJoke();
         
         //Feel free to use your own setup here - this is just provided as an example
         //new Jester( new SomeReallyCoolOutputClass(), new SomeJokeServiceClass() ).TellJoke();

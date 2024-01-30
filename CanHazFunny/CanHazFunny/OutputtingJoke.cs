@@ -10,8 +10,6 @@ namespace CanHazFunny
     {
         public void PrintingJokeyJoke(string jokeToPrint)
         {
-            if (jokeToPrint == null)
-                throw new ArgumentNullException("joke is Null");
             Console.WriteLine(jokeToPrint);
         }
     }

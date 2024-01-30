@@ -9,16 +9,8 @@ public class JokeService : IJokeService
 
     public string GetJoke()
     {
-        //HttpResponseMessage response = HttpClient.GetAs).Result;
         string joke = HttpClient.GetStringAsync("https://geek-jokes.sameerkumar.website/api").Result;
-           return joke;
-       // }
-       /// catch (AggregateException e)
-       // {
-
-       // }
-       //string joke=response.Content.ReadAsStringAsync().Result;
-       //return joke;
+        return joke;
     }
 
 }

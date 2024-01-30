@@ -9,11 +9,11 @@ namespace CanHazFunny;
 
 public class Jester
 {
-   // readonly IJokeOutput? output;
-   private  IJokeOutput? Output {   get; set; }
-   public IJokeService? OurService { get; set; }
+    // readonly IJokeOutput? output;
+    private OutputtingJoke? Output;
+    private JokeService? OurService;
 
-    public Jester(IJokeService? serve, IJokeOutput? output)
+    public Jester(JokeService? serve, OutputtingJoke? output)
     {
         ArgumentNullException.ThrowIfNull(serve, nameof(serve));
         ArgumentNullException.ThrowIfNull(output, nameof(output));
@@ -29,7 +29,7 @@ public class Jester
         do
         {
           theJoke=OurService!.GetJoke();
-        } while ((!JokeService.Equals("chuck norris", StringComparison.OrdinalIgnoreCase)));
+        } while ((!theJoke.Equals("chuck norris", StringComparison.OrdinalIgnoreCase)));
 
         Output!.PrintingJokeyJoke(theJoke);
     }
