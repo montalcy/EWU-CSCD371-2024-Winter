@@ -10,6 +10,7 @@ public class OutputtingJoke : IJokeOutput
 {
     public void PrintingJokeyJoke(string jokeToPrint)
     {
+        ArgumentNullException.ThrowIfNull(jokeToPrint);
         Console.WriteLine(jokeToPrint);
     }
 }
