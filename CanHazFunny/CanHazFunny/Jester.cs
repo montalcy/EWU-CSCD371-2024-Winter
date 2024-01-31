@@ -7,27 +7,26 @@ using System.Threading.Tasks;
 namespace CanHazFunny;
 
 
-public class Jester
+public class Jester 
 {
     private const string NameToAvoid = "chuck norris";
+    string theJoke = "";
 
     // readonly IJokeOutput? output;
-    private OutputtingJoke? Output;
-    private JokeService? OurService;
+    private IJokeOutput? Output;
+    private IJokeService? OurService;
 
-    public Jester(JokeService? service, OutputtingJoke? output)
+    public Jester(IJokeService service, IJokeOutput output)
     {
-        ArgumentNullException.ThrowIfNull(service, nameof(service));
-        ArgumentNullException.ThrowIfNull(output, nameof(output));
+        ArgumentNullException.ThrowIfNull(service);
+        ArgumentNullException.ThrowIfNull(output);
         this.Output = output;
         this.OurService = service;
     }
    
 
     public void TellJoke()
-    {
-        string theJoke = "";
-
+    {  
         do
         {
           theJoke = OurService!.GetJoke();

@@ -5,9 +5,9 @@
       <TargetFramework>net8.0</TargetFramework>
 	  <LangVersion>12.0</LangVersion>
 	  <Nullable>enable</Nullable>
+	  <Nullability>true</Nullability>
 	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
-	  <Nullability>true</Nullability>
 	  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 	  <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 </PropertyGroup>
