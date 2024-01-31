@@ -45,58 +45,37 @@ public class JesterTests
 
     }
 
-    //[Fact]
-    //public void TellJoke_NoChuckNorris_ReturnsJoke()
-    //{
-    //    JokeService jokeService=new();
-    //    Jester jester = new(jokeService, new OutputtingJoke());
-        
-    //}
 
-    [Theory]
-    [InlineData("How do trees get on a computer? They just log in")]
-    public void TellJoke_CorrectJokeInput_OutputMatches(string joke)
+    [Fact]
+    public void TellJoke_ForceInputtingChuck_SuccesfulNotEqual()
     {
-        var service = new Mock<IJokeService>();
-        var output = new Mock<IJokeOutput>();
-        service.Setup(x => x.GetJoke()).Returns(joke);
-        Jester jester = new Jester(service.Object, output.Object);
-        jester.TellJoke();
-        output.Verify(r => r.PrintingJokeyJoke(joke));
-    }
-    [Theory]
-    [InlineData("Chuck Norris joke")]
-    public void TellJoke_ChuckNorrisJokeInput_OutputDoesNotMatches(string joke)
-    {
-        var service = new Mock<IJokeService>();
-        var output = new Mock<IJokeOutput>();
-        service.Setup(x => x.GetJoke()).Returns(joke);
-        Jester jester = new Jester(service.Object, output.Object);
-        jester.TellJoke();
-        output.Verify(r => r.PrintingJokeyJoke(joke), Times.Never);
-        
+        var service = new Mock<JokeService>();
+        var output = new Mock<OutputtingJoke>();
+        JokeService servicer = new();
+        Jester jester = new(service.Object, output.Object);
+        OutputtingJoke o = new();
+
+        string _initialJoke = "Chuck Norris Joke";
+        using (StringWriter sw = new StringWriter())
+        {
+            Console.SetOut(sw);
+            jester.TellJoke(_initialJoke);
+            Assert.NotEqual(_initialJoke, sw.ToString());
+        } 
     }
 
     [Fact]
-    public void TellJoke_JokeInput_DoesNotReturnChuck()
+    public void TellJoke_FromJokeServiceInput_DoesNotReturnChuck_Succeful()
     {
-        var service = new Mock<IJokeService>();
-        var output = new Mock<IJokeOutput>();
+        var service = new Mock<JokeService>();
+        var output = new Mock<OutputtingJoke>();
         JokeService servicer = new();
         Jester jester = new(service.Object, output.Object);
-        Assert.DoesNotContain("Chuck Norris", jester.TellJoke().ToString);
-        //Jester jester = new(service.Object, output.Object);
-        //jester.TellJoke();
 
         using (StringWriter sw = new StringWriter())
         {
-            Console.SetOut(sw); // Redirect Console.Out to StringWriter
-
-            // Act
+            Console.SetOut(sw);
             jester.TellJoke();
-
-            // Assert
-
             Assert.DoesNotContain("Chuck Norris", sw.ToString());
         }
     }

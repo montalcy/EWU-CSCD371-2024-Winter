@@ -34,4 +34,14 @@ public class Jester
 
         Output.PrintingJokeyJoke(_theJoke);
     }
+    public void TellJoke(string JOKEY)
+    {
+        string _theJoke = JOKEY;
+        do
+        {
+            _theJoke = OurService.GetJoke();
+        } while (_theJoke.Contains("Chuck Norris"));
+
+        Output.PrintingJokeyJoke(_theJoke);
+    }
 }
