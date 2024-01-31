@@ -10,10 +10,8 @@ namespace CanHazFunny;
 public class Jester 
 {
     
-
-    // readonly IJokeOutput? output;
-    private IJokeOutput Output;
-    private IJokeService OurService;
+    private readonly IJokeOutput Output;
+    private readonly IJokeService OurService;
 
     public Jester(IJokeService service, IJokeOutput output)
     {
