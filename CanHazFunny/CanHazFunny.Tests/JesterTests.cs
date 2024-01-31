@@ -1,6 +1,7 @@
 using Xunit;
 using Moq;
 using System;
+using System.IO;
 
 namespace CanHazFunny.Tests;
 
@@ -59,8 +60,46 @@ public class JesterTests
         var service = new Mock<IJokeService>();
         var output = new Mock<IJokeOutput>();
         service.Setup(x => x.GetJoke()).Returns(joke);
-        output.Setup(r => r.PrintingJokeyJoke(joke));
-        Jester jester =
-        output.VerifyAll();// (x => x.PrintingJokeyJoke(joke));
+        Jester jester = new Jester(service.Object, output.Object);
+        jester.TellJoke();
+        output.Verify(r => r.PrintingJokeyJoke(joke));
     }
+    [Theory]
+    [InlineData("Chuck Norris joke")]
+    public void TellJoke_ChuckNorrisJokeInput_OutputDoesNotMatches(string joke)
+    {
+        var service = new Mock<IJokeService>();
+        var output = new Mock<IJokeOutput>();
+        service.Setup(x => x.GetJoke()).Returns(joke);
+        Jester jester = new Jester(service.Object, output.Object);
+        jester.TellJoke();
+        output.Verify(r => r.PrintingJokeyJoke(joke), Times.Never);
+        
+    }
+
+    [Fact]
+    public void TellJoke_JokeInput_DoesNotReturnChuck()
+    {
+        var service = new Mock<IJokeService>();
+        var output = new Mock<IJokeOutput>();
+        JokeService servicer = new();
+        Jester jester = new(service.Object, output.Object);
+        Assert.DoesNotContain("Chuck Norris", jester.TellJoke().ToString);
+        //Jester jester = new(service.Object, output.Object);
+        //jester.TellJoke();
+
+        using (StringWriter sw = new StringWriter())
+        {
+            Console.SetOut(sw); // Redirect Console.Out to StringWriter
+
+            // Act
+            jester.TellJoke();
+
+            // Assert
+
+            Assert.DoesNotContain("Chuck Norris", sw.ToString());
+        }
+    }
+
+
 }
