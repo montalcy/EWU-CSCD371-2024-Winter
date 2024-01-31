@@ -34,7 +34,7 @@ public class JesterTests
 
         try
         {
-            new Jester(new JokeService(), null!);
+            Jester j=new(new JokeService(), null!);
         }
         catch (ArgumentNullException ex)
         {
