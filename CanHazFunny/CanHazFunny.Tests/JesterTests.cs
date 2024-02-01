@@ -11,11 +11,11 @@ public class JesterTests
     [Fact]
     public void Jester_NullService_ReturnsArgumentNull()
     {
-        bool exceptionThrown=false;
+        bool exceptionThrown = false;
         string expectedParamName = "service";
         try
         {
-            Jester j= new(null!, new OutputtingJoke());
+            Jester j = new(null!, new OutputtingJoke());
         }
         catch (ArgumentNullException ex)
         {
@@ -34,7 +34,7 @@ public class JesterTests
 
         try
         {
-            Jester j=new(new JokeService(), null!);
+            Jester j = new(new JokeService(), null!);
         }
         catch (ArgumentNullException ex)
         {

@@ -7,13 +7,13 @@ using Xunit.Sdk;
 
 namespace CanHazFunny.Tests;
 
-public class JokeOutputTests 
+public class JokeOutputTests
 {
-   
+
     [Fact]
-    public void PrintingJokeyJoke_ConsolePrinting_Succesful()
+    public void PrintingJokeyJoke_ConsolePrinting_Successful()
     {
-        OutputtingJoke output=new();
+        OutputtingJoke output = new();
         string jokey = "Chuck Norris";
         using StringWriter sw = new();
         Console.SetOut(sw);

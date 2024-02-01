@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace CanHazFunny;
 
 
-public class Jester 
+public class Jester
 {
-    
+
     private readonly IJokeOutput Output;
     private readonly IJokeService OurService;
 
@@ -20,14 +20,14 @@ public class Jester
         Output = output;
         OurService = service;
     }
-   
+
 
     public void TellJoke()
     {
         string _theJoke;
         do
         {
-          _theJoke = OurService.GetJoke();
+            _theJoke = OurService.GetJoke();
         } while (_theJoke.Contains("Chuck Norris"));
 
         Output.PrintingJokeyJoke(_theJoke);
@@ -36,7 +36,7 @@ public class Jester
     {
         while (jokey.Contains("Chuck Norris"))
         {
-            jokey = OurService.GetJoke();   
+            jokey = OurService.GetJoke();
         }
 
         Output.PrintingJokeyJoke(jokey);
