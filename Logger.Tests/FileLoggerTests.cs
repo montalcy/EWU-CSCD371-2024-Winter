@@ -28,6 +28,9 @@ public class FileLoggerTests : FileLoggerTestsBase
                 Assert.True(Enum.TryParse(typeof(LogLevel), levelText, out object? level) ?
                     level is LogLevel.Error : false,"Level was not parsed successfully.");
             }
+
         }
+
     }
+
 }
