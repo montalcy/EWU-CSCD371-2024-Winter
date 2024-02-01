@@ -47,7 +47,7 @@ public class JesterTests
 
 
     [Fact]
-    public void TellJoke_ForceInputtingChuck_SuccesfulNotEqual()
+    public void TellJoke_ForceInputtingChuck_SuccessfulNotEqual()
     {
         Mock<JokeService> service = new();
         Mock<OutputtingJoke> output = new();
@@ -61,7 +61,7 @@ public class JesterTests
     }
 
     [Fact]
-    public void TellJoke_FromJokeServiceInput_DoesNotReturnChuck_Succeful()
+    public void TellJoke_FromJokeServiceInput_DoesNotReturnChuck_Successful()
     {
         Mock<JokeService> service = new();
         Mock<OutputtingJoke> output = new();
