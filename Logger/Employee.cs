@@ -8,8 +8,28 @@ namespace Logger
 {
     public record class Employee : Base
     {
-        public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public override string Name { get => GetEmployeeName(); set => throw new NotImplementedException(); }
+        private string _firstName;
+        private string _lastName;
+        private string? _middleName;
+        string? full;
+        public Employee(string firstName, string lastName, string middleName)
+        {
+            ArgumentNullException.ThrowIfNullOrEmpty(_firstName);
+            ArgumentNullException.ThrowIfNullOrEmpty(_lastName);
+            ArgumentNullException.ThrowIfNullOrEmpty(_middleName);
+            _firstName = firstName;
+            _lastName = lastName;
+            _middleName = middleName;
+        }
+        public Employee(string firstName, string lastName)
+        {
+            ArgumentNullException.ThrowIfNullOrEmpty(_firstName);
+            ArgumentNullException.ThrowIfNullOrEmpty(_lastName);
+            _firstName = firstName;
+            _lastName = lastName;
+            _middleName = null;
+        }
         //public override string getName()
         //{
         //    return getEmployeeName();
@@ -20,12 +40,27 @@ namespace Logger
         //    throw new NotImplementedException();
         //}
 
-        private string getEmployeeName()
+        private string GetEmployeeName()
         {
-            //throw new NotImplementedException();
-            return "Full Name";
+            return full!;
         }
+        private void SetEmployeeName()
+        {
+            
 
+            if (_middleName != null)
+            {
+                PersonName personName = new(_firstName, _lastName, _middleName);
+                full = personName.makeFullName();
+            }
+            else
+            {
+                PersonName personName = new(_firstName, _lastName);
+                full = personName.makeFullName();
+            }
+
+            
+        }
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
