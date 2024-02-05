@@ -15,8 +15,6 @@ namespace Logger
             Name = name;
         }
 
-        
-
         private string GetBookName()
         {
             //throw new NotImplementedException();
