@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger
-{
+namespace Logger;
+
     public record class Book : Base
     {
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -59,6 +59,6 @@ namespace Logger
             }
         }
     }
-}
+
 //public override string Name => GetBookName();
 //public override string Name { init => GetBookName(); }

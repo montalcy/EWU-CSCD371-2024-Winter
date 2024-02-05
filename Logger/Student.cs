@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger
-{
+namespace Logger;
+
     public record class Student : Base
     {
         public override string Name { get => GetStudentName(); set => SetStudentName(); }
@@ -59,5 +59,5 @@ namespace Logger
             }
         }
     }
-}
+
 //public override string Name => GetStudentName();

@@ -5,8 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger
-{
+namespace Logger;
     public class PersonName
     {
         //public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -49,4 +48,3 @@ namespace Logger
         //public string LastName { get => _lastName; set => throw new NotImplementedException(); }
         
     }
-}

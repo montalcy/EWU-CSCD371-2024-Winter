@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger
-{
+namespace Logger;
     public record class Employee : Base
     {
         public override string Name { get => GetEmployeeName(); set => throw new NotImplementedException(); }
@@ -62,5 +61,5 @@ namespace Logger
             
         }
     }
-}
+
 //public override string Name => getEmployeeName();

@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger
-{
+namespace Logger;
     public record class FullName
     {
         public string FirstName { get; set; } = string.Empty;
@@ -39,4 +38,4 @@ namespace Logger
         }
 
     }
-}
+
