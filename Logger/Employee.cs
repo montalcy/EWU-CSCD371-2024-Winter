@@ -18,8 +18,17 @@ namespace Logger
             //throw new NotImplementedException();
             return "Full Name";
         }
+        public override bool Equals(object? obj)
+        {
+            return obj is Employee employee &&
+                   Id.Equals(employee.Id) &&
+                   Name == employee.Name &&
+                   Name == employee.Name;
+        }
 
-
-
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
