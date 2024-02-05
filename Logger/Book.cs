@@ -8,12 +8,14 @@ namespace Logger
 {
     internal class Book : Base
     {
-        public Book() { }
-
         public override string Name { get => throw new NotImplementedException(); init => GetBookName(); }
+        public Book() { }
+        public Book(string name)
+        {
+            Name = name;
+        }
 
-        //public override string Name => GetBookName();
-        //public override string Name { init => GetBookName(); }
+        
 
         private string GetBookName()
         {
@@ -24,7 +26,6 @@ namespace Logger
         {
             return obj is Book book &&
                    Id.Equals(book.Id) &&
-                   Name == book.Name &&
                    Name == book.Name;
         }
 
@@ -34,3 +35,5 @@ namespace Logger
         }
     }
 }
+//public override string Name => GetBookName();
+//public override string Name { init => GetBookName(); }

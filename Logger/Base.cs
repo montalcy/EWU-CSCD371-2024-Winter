@@ -8,7 +8,9 @@ namespace Logger
 {
     public abstract class Base : IEntity
     {
-        public  Guid Id { get; init; }
-        public abstract string Name { get; init; }
+        private Guid id;
+
+        public Guid Id { get => id; init => id = value; } // Implemented Implicitly as every type of children will have an ID associated with them
+        public abstract string Name { get; init; } // Implemented abstractly as to force children to implement it
     }
 }
