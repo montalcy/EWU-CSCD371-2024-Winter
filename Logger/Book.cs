@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logger
 {
-    internal class Book : Base
+    public record class Book : Base
     {
         public override string getName()
         {
@@ -20,12 +20,6 @@ namespace Logger
         public string getBookName()
         {
             return "Book Name";
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is Book book &&
-                   Id.Equals(book.Id);
         }
 
         public override int GetHashCode()

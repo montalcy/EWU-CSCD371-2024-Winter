@@ -16,6 +16,7 @@ namespace Logger
         { 
             FirstName = firstName;
             LastName = lastName;
+            MiddleName = null;
         }
         public FullName(string firstName, string lastName, string? middleName)
         {

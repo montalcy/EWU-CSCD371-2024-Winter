@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logger
 {
-    internal class Student : Base
+    public record class Student : Base
     {
         public override string getName()
         {
@@ -22,12 +22,6 @@ namespace Logger
         {
             //throw new NotImplementedException();
             return "Full Name";
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is Student student &&
-                   Id.Equals(student.Id);
         }
 
         public override int GetHashCode()
