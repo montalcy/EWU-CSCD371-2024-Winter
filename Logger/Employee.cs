@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Logger;
     public record class Employee : Base
     {
-        public override string Name { get => GetEmployeeName(); set => throw new NotImplementedException(); }
+        public override string Name { get => GetEmployeeName(); set => SetEmployeeName(); }
         private string _firstName;
         private string _lastName;
         private string? _middleName;
