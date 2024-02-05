@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger.Tests
+namespace Logger.Tests;
+public class StorageTests
 {
-    public class StorageTests
-    {
-        
-    }
+
 }
+
