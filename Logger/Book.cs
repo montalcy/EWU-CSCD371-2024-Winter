@@ -12,6 +12,11 @@ namespace Logger
         public Book(string name) { }
         public Book(string name, int id) { }
 
-        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public override string Name => GetBookName();
+
+        private string GetBookName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

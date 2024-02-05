@@ -13,6 +13,11 @@ namespace Logger
         public Employee(int id, string name) { }
         public Employee(string name) { }
         public Employee(string name, int id) { }
-        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public override string Name => getEmployeeName();
+
+        private string getEmployeeName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

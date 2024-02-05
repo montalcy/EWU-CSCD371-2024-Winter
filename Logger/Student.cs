@@ -11,6 +11,11 @@ namespace Logger
         public Student() { }
         public Student(int id) { }
 
-        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public override string Name => GetStudentName();
+
+        private string GetStudentName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
