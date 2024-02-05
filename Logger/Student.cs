@@ -12,7 +12,7 @@ namespace Logger
         private string _firstName;
         private string _lastName;
         private string? _middleName;
-        string? full;
+        string? full = "";
         //public override string getName()
         //{
         //    return GetStudentName();

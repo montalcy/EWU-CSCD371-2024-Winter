@@ -12,7 +12,7 @@ namespace Logger
         private string _firstName;
         private string _lastName;
         private string? _middleName;
-        string? full;
+        string? full = "";
 
         public Book(string firstName, string lastName, string middleName)
         {
