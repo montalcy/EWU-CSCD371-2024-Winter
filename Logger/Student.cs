@@ -58,10 +58,6 @@ namespace Logger
                 full = personName.makeFullName();
             }
         }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
     }
 }
 //public override string Name => GetStudentName();

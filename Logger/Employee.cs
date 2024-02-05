@@ -61,10 +61,6 @@ namespace Logger
 
             
         }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
     }
 }
 //public override string Name => getEmployeeName();
