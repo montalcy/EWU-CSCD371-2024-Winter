@@ -8,7 +8,7 @@ namespace Logger
 {
     public abstract class Base : IEntity
     {
-        public  Guid Id { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public  Guid Id { get; init; }
         public abstract string Name { get; init; }
     }
 }

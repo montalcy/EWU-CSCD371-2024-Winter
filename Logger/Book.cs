@@ -9,14 +9,15 @@ namespace Logger
     internal class Book : Base
     {
         public Book() { }
-        public Book(string name) { }
-        public Book(string name, int id) { }
 
-        public override string Name => GetBookName();
+        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        //public override string Name => GetBookName();
+        //public override string Name { init => GetBookName(); }
 
         private string GetBookName()
         {
             throw new NotImplementedException();
         }
+       
     }
 }

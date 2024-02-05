@@ -9,9 +9,9 @@ namespace Logger
     internal class Student : Base
     {
         public Student() { }
-        public Student(int id) { }
 
-        public override string Name => GetStudentName();
+        //public override string Name => GetStudentName();
+        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
 
         private string GetStudentName()
         {
