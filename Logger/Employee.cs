@@ -8,15 +8,17 @@ namespace Logger
 {
     public record class Employee : Base
     {
-        public override string getName()
-        {
-            return getEmployeeName();
-        }
+        public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public override void setName(string name)
-        {
-            throw new NotImplementedException();
-        }
+        //public override string getName()
+        //{
+        //    return getEmployeeName();
+        //}
+
+        //public override void setName(string name)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private string getEmployeeName()
         {
