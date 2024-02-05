@@ -12,7 +12,7 @@ namespace Logger
         private string _firstName;
         private string _lastName;
         private string? _middleName;
-        string? full;
+        private string? full;
         public Employee(string firstName, string lastName, string middleName)
         {
             ArgumentNullException.ThrowIfNullOrEmpty(_firstName);
