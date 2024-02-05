@@ -8,11 +8,14 @@ namespace Logger
 {
     internal class Student : Base
     {
-        public override string Name { get => throw new NotImplementedException(); init => GetStudentName(); }
-        public Student() { }
-        public Student(string name)
+        public override string getName()
         {
-            Name = name;
+            return GetStudentName();
+        }
+
+        public override void setName(string name)
+        {
+            throw new NotImplementedException();
         }
 
         private string GetStudentName()
@@ -24,13 +27,12 @@ namespace Logger
         public override bool Equals(object? obj)
         {
             return obj is Student student &&
-                   Id.Equals(student.Id) &&
-                   Name == student.Name;
+                   Id.Equals(student.Id);
         }
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return HashCode.Combine(Id);
         }
     }
 }

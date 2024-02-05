@@ -8,11 +8,14 @@ namespace Logger
 {
     internal class Employee : Base
     {
-        public override string Name { get => throw new NotImplementedException(); init => getEmployeeName(); }
-        public Employee() { }
-        public Employee(string name)
+        public override string getName()
         {
-            Name = name;
+            return getEmployeeName();
+        }
+
+        public override void setName(string name)
+        {
+            throw new NotImplementedException();
         }
 
         private string getEmployeeName()
@@ -20,17 +23,15 @@ namespace Logger
             //throw new NotImplementedException();
             return "Full Name";
         }
-
         public override bool Equals(object? obj)
         {
             return obj is Employee employee &&
-                   Id.Equals(employee.Id) &&
-                   Name == employee.Name;
+                   Id.Equals(employee.Id);
         }
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return HashCode.Combine(Id);
         }
     }
 }

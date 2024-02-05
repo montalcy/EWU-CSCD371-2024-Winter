@@ -8,28 +8,29 @@ namespace Logger
 {
     internal class Book : Base
     {
-        public override string Name { get => throw new NotImplementedException(); init => GetBookName(); }
-        public Book() { }
-        public Book(string name)
+        public override string getName()
         {
-            Name = name;
+            return getBookName();
         }
 
-        private string GetBookName()
+        public override void setName(string name)
         {
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
+        }
+        public string getBookName()
+        {
             return "Book Name";
         }
+
         public override bool Equals(object? obj)
         {
             return obj is Book book &&
-                   Id.Equals(book.Id) &&
-                   Name == book.Name;
+                   Id.Equals(book.Id);
         }
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return HashCode.Combine(Id);
         }
     }
 }

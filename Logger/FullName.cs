@@ -23,7 +23,19 @@ namespace Logger
             LastName = lastName;
             MiddleName = middleName;
         }
+        public override string ToString()
+        {
+            string fullName = FirstName;
+            if (MiddleName != null)
+            {
+                fullName += " " + MiddleName + " " + LastName;
+            }else if (LastName != null)
+            {
+                fullName += LastName;
+            }
 
-        
+            return fullName;
+        }
+
     }
 }
