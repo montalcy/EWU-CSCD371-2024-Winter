@@ -10,13 +10,14 @@ namespace Logger
     {
         public Book() { }
 
-        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public override string Name { get => throw new NotImplementedException(); init => GetBookName(); }
         //public override string Name => GetBookName();
         //public override string Name { init => GetBookName(); }
 
         private string GetBookName()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return "Book Name";
         }
        
     }

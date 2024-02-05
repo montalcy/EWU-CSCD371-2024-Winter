@@ -11,11 +11,12 @@ namespace Logger
         public Student() { }
 
         //public override string Name => GetStudentName();
-        public override string Name { get => throw new NotImplementedException(); init => throw new NotImplementedException(); }
+        public override string Name { get => throw new NotImplementedException(); init => GetStudentName(); }
 
         private string GetStudentName()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return "Full Name";
         }
     }
 }
