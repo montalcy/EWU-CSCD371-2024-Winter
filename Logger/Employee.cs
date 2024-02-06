@@ -12,12 +12,12 @@ public record class Employee : Base
     private string? _middleName;
     private FullName FullName;
 
-    public Employee(string firstName, string lastName, FullName fullname, string? middleName)
+    public Employee(string firstName, string lastName, string? middleName)
     {
         _firstName = firstName;
         _lastName = lastName;
         _middleName = middleName;
-        FullName = fullname;
+        FullName = new FullName(_firstName, _lastName);
     }
 
     public override string Name { get { return FullName.GetFullName(); } set { Name = FullName.GetFullName(); } }
