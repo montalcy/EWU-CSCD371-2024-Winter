@@ -10,10 +10,7 @@ public abstract record class Base : IEntity
 {
     public Guid Id { get; init; }
     public abstract string Name { get; set; } // implicitly implemented, forced implementation using abstracted
-                                              //string IEntity.Name { get => getName(); set => setName(value); }
-
-    //public abstract string getName();
-    //public abstract void setName(string name);
+                                              
 
 
 }

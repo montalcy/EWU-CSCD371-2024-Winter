@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Logger;
 public record class FullName
 {
-    public string FirstName { get; set; } = string.Empty;
-    public string LastName { get; set; } = string.Empty;
-    public string? MiddleName { get; set; } = string.Empty;
+    public string FirstName { get; set; }
+    public string LastName { get; set; } 
+    public string? MiddleName { get; set; } 
 
     public FullName(string firstName, string lastName)
     {
@@ -23,20 +23,9 @@ public record class FullName
         LastName = lastName;
         MiddleName = middleName;
     }
-    public override string ToString()
-    {
-        string fullName = FirstName;
-        if (MiddleName != null)
-        {
-            fullName += " " + MiddleName + " " + LastName;
-        }
-        else if (LastName != null)
-        {
-            fullName += LastName;
-        }
 
-        return fullName;
-    }
+    public string GetFullName() =>
+       MiddleName == null ? FirstName + " " + MiddleName + " " + LastName : FirstName + " " + LastName;
 
 }
 
