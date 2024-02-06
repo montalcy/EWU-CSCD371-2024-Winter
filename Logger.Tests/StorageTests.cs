@@ -65,7 +65,7 @@ public class StorageTests
     }
 
     [Fact]
-    public void StorageContain_CheckingIfStudentWasPlacedIn_True()
+    public void StorageContain_CheckingIfBookWasPlacedIn_True()
     {
         Storage storage = new Storage();
         IEntity book = new Book("BOOK title");
@@ -74,13 +74,32 @@ public class StorageTests
     }
 
     [Fact]
-    public void ual()
+    public void StorageContain_CheckingIfStudentWasPlacedIn_True()
+    {
+        Storage storage = new Storage();
+        FullName fullname = new("Cynthia", "Montalvo");
+        IEntity student1 = new Student("Cynthia", "Montalvo", fullname,null);
+        storage.Add(student1);
+        Assert.True(storage.Contains(student1));
+    }
+
+    [Fact]
+    public void StorageContain_CheckingIfEmployeeWasPlacedIn_True()
+    {
+        Storage storage = new Storage();
+        FullName fullname = new("Cynthia", "Montalvo");
+        IEntity employee1 = new Employee("Cynthia", "Montalvo", fullname, null);
+        storage.Add(employee1);
+        Assert.True(storage.Contains(employee1));
+    }
+
+    [Fact]
+    public void GetFullName_TwoRecords_NotEqual()
     {
         //should return false since they are different records
         FullName full = new("First", "Last");
-        full.GetFullName();
-        Assert.Equal("First Last", full.GetFullName());
-
+        FullName otherFull = new("Fist", "Last");
+        Assert.NotEqual(otherFull.GetFullName(), full.GetFullName());
     }
 }
 
