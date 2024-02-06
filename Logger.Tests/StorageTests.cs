@@ -11,24 +11,24 @@ public class StorageTests
     [Fact]
     public void StudentConstructor_CheckingEquality_Equal()
     {
+        
         //should return true since they are the same type of records
         FullName full = new("First", "Last");
         FullName full2 = new("First2", "Last2");
-        Student student1 = new("First", "Last", full, null);
-        Student student2 = new("First2", "Last2", full2, null);
-        Assert.True(student1.Equals(student2));
+        IEntity student1 = new Student("First", "Last", full, null);
+        IEntity student2 = new Student("First2", "Last2", full2, null);
+        Assert.Equal(student1.GetType(), student2.GetType());
 
     }
-    //hsih
     [Fact]
     public void EmployeeConstructor_CheckingEquality_Equal()
     {
         //should return true since they are the same type of records
         FullName full = new("First", "Last");
         FullName full2 = new("First2", "Last2");
-        Employee et1 = new("First", "Last", full, null);
-        Employee et2 = new("First2", "Last2", full2, null);
-        Assert.True(et1.Equals(et2));
+        IEntity et1 = new Employee("First", "Last", full, null);
+        IEntity et2 = new Employee("First2", "Last2", full2, null);
+        Assert.Equal(et1.GetType(), et2.GetType());
 
     }
 
@@ -37,8 +37,8 @@ public class StorageTests
     {
         //should return true since they are the same type of records
         Book book1 = new("Book");
-        Book book2 = new("Book");
-        Assert.True(book1.Equals(book2));
+        Book book2 = new("Book2");
+        Assert.Equal(book1.GetType(), book2.GetType());
     }
     
     [Fact]
@@ -49,7 +49,38 @@ public class StorageTests
         FullName full2 = new("First2", "Last2");
         Employee et1 = new("First", "Last", full, null);
         Book book2 = new("Book");
-        Assert.False(et1.Equals(book2));
+
+        Assert.NotEqual(et1.GetType(), book2.GetType());
+    }
+
+    [Fact]
+    public void Constructor_CheckingEqualityForFullNameVersusObjectType_NotEqualAndEqual()
+    {
+        //should return false since they are different records
+        Book book = new Book("The book");
+        Book book2 = new Book("The other book");
+
+        Assert.Equal(book.GetType(), book2.GetType());
+        Assert.False(book==book2);
+    }
+
+    [Fact]
+    public void StorageContain_CheckingIfStudentWasPlacedIn_True()
+    {
+        Storage storage = new Storage();
+        IEntity book = new Book("BOOK title");
+        storage.Add(book);
+        Assert.True(storage.Contains(book));
+    }
+
+    [Fact]
+    public void ual()
+    {
+        //should return false since they are different records
+        FullName full = new("First", "Last");
+        full.GetFullName();
+        Assert.Equal("First Last", full.GetFullName());
+
     }
 }
 
