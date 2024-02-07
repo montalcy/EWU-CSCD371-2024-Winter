@@ -23,8 +23,8 @@ public record class Book : Base
     }
 
     public Guid id { get { return identity; } }
-    
-    public override string Name { get { return  isbn+" "+Author; } set { Name = isbn+" "+Author; } }
+
+    public override string Name { get { return isbn + " " + Author; } set { /*Name = isbn + " " + Author;*/ } }
 
 }
 

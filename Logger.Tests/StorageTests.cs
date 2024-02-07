@@ -11,7 +11,7 @@ public class StorageTests
     [Fact]
     public void StudentConstructor_CheckingEquality_Equal()
     {
-        
+
         //should return true since they are the same type of records
         Base student1 = new Student("First", "Last", null);
         Base student2 = new Student("First2", "Last2", null);
@@ -22,7 +22,7 @@ public class StorageTests
     public void EmployeeConstructor_CheckingEquality_Equal()
     {
         //should return true since they are the same type of records
-        
+
         Base et1 = new Employee("First", "Last", null);
         Base et2 = new Employee("First2", "Last2", null);
         Assert.Equal(et1.GetType(), et2.GetType());
@@ -37,7 +37,7 @@ public class StorageTests
         Base book2 = new Book("ISBN", "Author");
         Assert.Equal(book1.GetType(), book2.GetType());
     }
-    
+
     [Fact]
     public void Constructor_CheckingEqualityWithDifferentRecords_NotEqual()
     {
@@ -56,7 +56,7 @@ public class StorageTests
         Book book2 = new("ISBN2", "Author2");
 
         Assert.Equal(book.GetType(), book2.GetType());
-        Assert.False(book==book2);
+        Assert.False(book == book2);
     }
 
     [Fact]
@@ -72,7 +72,7 @@ public class StorageTests
     public void StorageContain_CheckingIfStudentWasPlacedIn_True()
     {
         Storage storage = new();
-        Base student1 = new Student("Cynthia", "Montalvo",null);
+        Base student1 = new Student("Cynthia", "Montalvo", null);
         storage.Add(student1);
         Assert.True(storage.Contains(student1));
     }

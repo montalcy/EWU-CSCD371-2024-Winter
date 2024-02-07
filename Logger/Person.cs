@@ -30,7 +30,7 @@ public record class Person : Base
         get { return FullName.GetFullName(); }
         set
         {
-            Name = FullName.GetFullName();
+            //Name = FullName.GetFullName();
         }
     }
 }
