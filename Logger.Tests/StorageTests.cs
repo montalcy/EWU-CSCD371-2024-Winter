@@ -91,7 +91,7 @@ public class StorageTests
     {
         //should return false since they are different records
         FullName full = new("First", "Last");
-        FullName otherFull = new("Fist", "Last");
+        FullName otherFull = new("Last", "Last");
 
         Assert.NotEqual(otherFull.GetFullName(), full.GetFullName());
     }
@@ -109,10 +109,10 @@ public class StorageTests
         Book book1 = new("ISBN", "Author");
         Book book2 = new("ISBN", "Author");
 
-        Assert.Equal(s1, s2);
-        Assert.Equal(e1, e2);
-        Assert.Equal(book1, book2);
+        Assert.Equal(s1.Name, s2.Name);
+        Assert.Equal(e1.Name, e2.Name);
+        Assert.Equal(book1.Name, book2.Name);
     }
-
+    // comnpare name then id should fail with different objects
 }
 

@@ -10,14 +10,21 @@ namespace Logger;
 
 public record class Book : Base
 {
-    private string BookName;
-    private string Isbn;
-    public Book(string Name, string isbn)
+    private string Author;
+    private string isbn;
+    private Guid identity;
+
+
+    public Book(string author, string isbn)
     {
-        BookName = Name;
-        Isbn = isbn;
+        Author = author;
+        this.isbn = isbn;
+        identity = new Guid();
     }
-    public override string Name { get { return BookName; } set { Name = BookName; } }
+
+    public Guid id { get { return identity; } }
+    
+    public override string Name { get { return  isbn+" "+Author; } set { Name = isbn+" "+Author; } }
 
 }
 
