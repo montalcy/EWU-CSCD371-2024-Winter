@@ -11,9 +11,11 @@ namespace Logger;
 public record class Book : Base
 {
     private string BookName;
-    public Book(string Name)
+    private string Isbn;
+    public Book(string Name, string isbn)
     {
         BookName = Name;
+        Isbn = isbn;
     }
     public override string Name { get { return BookName; } set { Name = BookName; } }
 
