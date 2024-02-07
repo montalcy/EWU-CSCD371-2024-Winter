@@ -10,8 +10,5 @@ public abstract record class Base : IEntity
 {
     public Guid Id { get; init; }
     public abstract string Name { get; set; } // implicitly implemented, forced implementation using abstracted
-                                              
-
-
 }
 
