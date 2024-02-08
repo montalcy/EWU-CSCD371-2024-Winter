@@ -13,12 +13,16 @@ public readonly record struct FullName
 
     public FullName(string firstName, string lastName)
     {
+        ArgumentNullException.ThrowIfNullOrEmpty (firstName);
+        ArgumentNullException.ThrowIfNullOrEmpty(lastName);
         FirstName = firstName;
         LastName = lastName;
         MiddleName = null;
     }
     public FullName(string firstName, string lastName, string? middleName)
     {
+        ArgumentNullException.ThrowIfNullOrEmpty(firstName);
+        ArgumentNullException.ThrowIfNullOrEmpty(lastName);
         FirstName = firstName;
         LastName = lastName;
         MiddleName = middleName;
