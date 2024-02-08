@@ -13,3 +13,4 @@ public record class Student : Person
 
     }
 }
+// Implicit the Student name will come from the Person class and the person class implements implicitly

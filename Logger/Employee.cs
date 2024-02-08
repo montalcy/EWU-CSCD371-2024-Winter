@@ -11,3 +11,4 @@ public record class Employee : Person
     {
     }
 }
+// Implicit the Employee name will come from the Person class and the person class implements implicitly
