@@ -34,3 +34,4 @@ public record class Person : Base
         }
     }
 }
+// Implemented name implicitly as we are retuning FullName.GetFullName();
