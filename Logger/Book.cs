@@ -17,6 +17,7 @@ public record class Book : Base
 
     public Book(string author, string isbn)
     {
+        ArgumentNullException.ThrowIfNullOrEmpty(author, isbn);
         Author = author;
         this.isbn = isbn;
         identity = new Guid();
@@ -27,6 +28,6 @@ public record class Book : Base
     public override string Name { get { return isbn + " " + Author; } set { /*Name = isbn + " " + Author;*/ } }
 
 }
-// We implmented Name and id Implicitly here as we are feeding the name
+// We implemented Name and id Implicitly here as we are feeding the name
 //public override string Name => GetBookName();
 //public override string Name { init => GetBookName(); }
