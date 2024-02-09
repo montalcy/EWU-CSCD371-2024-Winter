@@ -26,4 +26,5 @@ public class Storage
             return dynamicEntity.Id == expectedGuid;
         });
     }
+
 }

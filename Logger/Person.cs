@@ -23,7 +23,7 @@ public record class Person : Base
 
     }
 
-    public Guid Id { get { return Identity; } }
+    public Guid Id { get { return Identity; } set { } }
 
     public override string Name{ get { return FullName.GetFullName(); } set { } }
 }
