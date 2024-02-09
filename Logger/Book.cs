@@ -21,7 +21,7 @@ public record class Book: Base
         Identity = new Guid();
     }
 
-    public Guid Id { get { return Identity; } set { Identity = Identity; } }
+    public Guid Id { get { return Identity; } }
 
     public override string Name { get { return FullName; } set { } }
 
