@@ -8,24 +8,22 @@ using System.Threading.Tasks;
 
 namespace Logger;
 
-public record class Book : Base
+public record class Book: Base
 {
-    private string Author;
-    private string isbn;
-    private Guid identity;
+    private string FullName { get; set; }
+    private Guid Identity { get; set; }
 
 
-    public Book(string author, string isbn)
+    public Book(string title)
     {
-        ArgumentNullException.ThrowIfNullOrEmpty(author, isbn);
-        Author = author;
-        this.isbn = isbn;
-        identity = new Guid();
+        ArgumentNullException.ThrowIfNullOrEmpty(title);
+        FullName = title;
+        Identity = new Guid();
     }
 
-    public Guid id { get { return identity; } }
+    public Guid id { get { return Identity; } set { Identity = Identity; } }
 
-    public override string Name { get { return isbn + " " + Author; } set { /*Name = isbn + " " + Author;*/ } }
+    public override string Name { get { return FullName; } set { } }
 
 }
 // We implemented Name and id Implicitly here as we are feeding the name

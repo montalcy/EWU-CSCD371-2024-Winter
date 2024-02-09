@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Logger;
 public readonly record struct FullName
 {
-    private string FirstName { get; }
+    private string FirstName { get; } 
     private string LastName { get; } 
     private string? MiddleName { get; } 
 
