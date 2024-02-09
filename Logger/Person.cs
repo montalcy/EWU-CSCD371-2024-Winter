@@ -8,23 +8,23 @@ namespace Logger;
 
 public record class Person : Base
 {
-    private string _firstName {  get; set; }
-    private string _lastName {  get; set; }
-    private string? _middleName { get; set; }
+    private string FirstName {  get; set; }
+    private string LastName {  get; set; }
+    private string? MiddleName { get; set; }
     private FullName FullName { get; set; }
-    private Guid identity {  get; set; }
+    private Guid Identity {  get; set; }
     public Person(string firstName, string lastName, string? middleName)
     {
-        _firstName = firstName;
-        _lastName = lastName;
-        _middleName = middleName;
-        FullName = new FullName(_firstName, _lastName, _middleName);
-        identity = Guid.NewGuid();
+        FirstName = firstName;
+        LastName = lastName;
+        MiddleName = middleName;
+        FullName = new FullName(FirstName, LastName, MiddleName);
+        Identity = new Guid();
 
     }
 
-    public Guid id { get { return identity; } }
+    public Guid Id { get { return Identity; } }
 
-    public override string Name{ get { return FullName.GetFullName(); } set { Name = FullName.GetFullName();} }
+    public override string Name{ get { return FullName.GetFullName(); } set { } }
 }
 // Implemented name implicitly as we are retuning FullName.GetFullName();
