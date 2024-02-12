@@ -2,27 +2,28 @@
 {
     public class Node<T>
     {
-        private T _value;
-        private Node<T>? next;
+        private T _value { get; set; }
+        private Node<T>? Next {  get; set; }
+        private Node<T> Head { get { return this; } set { Head = this; } }
 
         public Node(T value)
         {
             _value = value;
-            this.next = null;
+            this.Next = null;
         }
         public override string ToString() => _value.ToString();
 
         public Node<T> Next
         {
-            get { return next ?? this; }
-            private set { next = value; }
+            get { return Next ?? this; }
+            private set { Next = value; }
         }
 
         public void Clear()
         {
-            if (this.next != null)
+            if (this.Next != null)
             {
-                this.next = null;
+                this.Next = null;
             }
         }
 
