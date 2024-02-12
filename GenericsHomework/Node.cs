@@ -17,5 +17,13 @@
             get { return next ?? this; }
             private set { next = value; }
         }
+
+        public void Clear()
+        {
+            if (this.next != null)
+            {
+                this.next = null;
+            }
+        }
     }
 }
