@@ -30,7 +30,7 @@
         {
 
         }
-        private bool Exists(T? value) // will be using it when appending
+        private bool doesExists(T? value) // will be using it when appending
         {
 
             return false;
