@@ -2,6 +2,7 @@
 {
     public class Node
     {
-
+        private T _value;
+        private Node<T>? next;
     }
 }
