@@ -25,5 +25,15 @@
                 this.next = null;
             }
         }
+
+        public void Append(T value)
+        {
+
+        }
+        private bool Exists(T? value) // will be using it when appending
+        {
+
+            return false;
+        }
     }
 }
