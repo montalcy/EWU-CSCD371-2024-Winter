@@ -1,5 +1,7 @@
-namespace GenericsHomework
-{
+global using Xunit;
+
+namespace GenericsHomework;
+
     public class UnitTest1
     {
         [Fact]
@@ -8,4 +10,3 @@ namespace GenericsHomework
 
         }
     }
-}

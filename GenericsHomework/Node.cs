@@ -5,9 +5,9 @@ namespace GenericsHomework;
 public class Node<T>
 {
     private T _value { get; set; }
-    private Node<T> next { get; set; }
+    private Node<T>? next { get; set; }
     public int Size;
-    private Node<T> Head { get; set; }
+    private Node<T>? Head { get; set; }
 
     public Node(T value)
     {
@@ -23,9 +23,9 @@ public class Node<T>
 
     override public string ToString()
     {
-        Node<T> current = Head;
+        Node<T>? current = Head;
         string list = "";
-        while (current.next != Head)
+        while (current!.next != Head)
         {
             list += current.GetData();
         }
@@ -44,9 +44,9 @@ public class Node<T>
 
     public void RemoveAll()
     {
-        Node<T> curr = Head;
+        Node<T>? curr = Head;
         Node<T> prev;
-        while (curr.next.next != Head)
+        while (curr!.next!.next != Head)
         {
             prev = curr;
             curr.next = curr.next.next;
@@ -60,7 +60,7 @@ public class Node<T>
 
     public void Append(T data)
     {
-        Node<T> curr = Head;
+        Node<T>? curr = Head;
         Node<T> addition = new Node<T>(data);
 
         if (Exists(data))
@@ -68,7 +68,7 @@ public class Node<T>
             throw new ArgumentException("This already exists in the list");
         }
 
-        if (Head.next == Head)
+        if (Head!.next! == Head)
         {
             Head = addition;
             Size = 1;
@@ -77,9 +77,9 @@ public class Node<T>
         {
             while (next != Head)
             {
-                curr = curr.next;
+                curr = curr!.next!;
             }
-            curr.next = addition;
+            curr!.next = addition;
             Size++;
         }
 
@@ -87,14 +87,14 @@ public class Node<T>
 
     public bool Exists(T data)
     {
-        Node<T> curr = Head;
+        Node<T>? curr = Head;
         while (curr != Head)
         {
-            if (curr._value.Equals(data))
+            if (curr!._value!.Equals(data))
             {
                 return true;
             }
-            curr = curr.next;
+            curr = curr!.next!;
         }
         return false;
     }

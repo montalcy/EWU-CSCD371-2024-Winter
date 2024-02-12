@@ -12,4 +12,12 @@
 
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <EditorConfigFiles Remove="C:\Users\aboud\Desktop\Pair Directories\Cynthia Montalvo\EWU-CSCD371-2024-Winter\GenericsHomework\.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="C:\Users\aboud\Desktop\Pair Directories\Cynthia Montalvo\EWU-CSCD371-2024-Winter\GenericsHomework\.editorconfig" />
+	</ItemGroup>
+
 </Project>
