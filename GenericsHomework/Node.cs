@@ -67,21 +67,26 @@ public class Node<T>
         {
             throw new ArgumentException("This already exists in the list");
         }
-
-        if (Head!.next! == Head)
-        {
-            Head = addition;
-            Size = 1;
-        }
         else
         {
-            while (next != Head)
+            if (Head!.next! == Head)
             {
-                curr = curr!.next!;
+                Head = addition;
+                Size = 1;
             }
-            curr!.next = addition;
-            Size++;
+            else
+            {
+                while (next != Head)
+                {
+                    curr = curr!.next!;
+                }
+                curr!.next = addition;
+                Size++;
+                addition.next = Head;
+            }
         }
+
+
 
     }
 
