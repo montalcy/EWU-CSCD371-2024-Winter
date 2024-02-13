@@ -6,7 +6,7 @@ public class Node<T>
 {
     private T _value { get; set; }
     private Node<T>? next { get; set; }
-    public int Size;
+    public int Size { get; private set; }
     private Node<T>? Head { get; set; }
 
     public Node(T value)
