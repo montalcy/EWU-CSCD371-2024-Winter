@@ -1,8 +1,8 @@
-global using Xunit;
+using Xunit;
 
 namespace GenericsHomework;
 
-    public class UnitTest1
+    public class GenericsHomeworkTests
     {
         [Fact]
         public void Test1()
