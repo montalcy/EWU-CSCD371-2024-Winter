@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace GenericsHomework.Test;
+namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
