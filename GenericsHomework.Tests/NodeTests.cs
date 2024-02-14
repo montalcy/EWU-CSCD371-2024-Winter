@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
-namespace GenericsHomework.Tests;
+namespace GenericsHomework.Test;
 public class NodeTests
 {
+    [Fact]
+    public void Append_NextToHead_Successful()
+    {
+        Node<Object> list=new Node<object>("IAmHead");
+        Node<Object> node = new Node<object>("IamNextToHead");
+        list.Append(node);
+        Assert.Equal("Your linked list: IamHead IamNextToHead", list.ToString());
+    }
+
+    [Fact]
+    public void True_one_two()
+    {
+        Assert.Equal("", "");
+    }
 
 }
