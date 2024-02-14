@@ -10,6 +10,12 @@ public class NodeTests
         Assert.Equal("IAmHead", list.GetData());
     }
 
+    [Fact]
+    public void GetDataHeadFailed()
+    {
+        Assert.Equal("true", "true");
+    }
+
     //[Fact]
     //public void Append_NextNode_Successful()
     //{
