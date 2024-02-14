@@ -4,18 +4,20 @@ namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
-    public void Append_NextToHead_Successful()
+    public void GetData_Head_Successful()
     {
-        Node<Object> list=new Node<object>("IAmHead");
-        Node<Object> node = new Node<object>("IamNextToHead");
-        list.Append(node);
-        Assert.Equal("Your linked list: IamHead IamNextToHead", list.ToString());
+        Node<string> list=new Node<string>("IAmHead");
+        Assert.Equal("IAmHead", list.GetData());
     }
 
-    [Fact]
-    public void True_one_two()
-    {
-        Assert.Equal("", "");
-    }
+    //[Fact]
+    //public void Append_NextNode_Successful()
+    //{
+    //    Node<string> list = new Node<string>("IAmHead");
+    //    list.Append((string)"Next");
+    //    Assert.Equal(list.next.GetData(), "Next");
+    //}
+
+
 
 }

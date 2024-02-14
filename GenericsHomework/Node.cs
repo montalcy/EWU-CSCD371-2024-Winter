@@ -5,7 +5,7 @@ namespace GenericsHomework;
 public class Node<T>
 {
     private T _value { get; set; }
-    private Node<T>? next { get; set; }
+    public Node<T>? next { get; set; }
     public int Size { get; private set; }
     private Node<T>? Head { get; set; }
 
@@ -61,7 +61,7 @@ public class Node<T>
     public void Append(T data)
     {
         Node<T>? curr = Head;
-        Node<T> addition = new Node<T>(data);
+        Node<T> addition = new(data);
 
         if (Exists(data))
         {
