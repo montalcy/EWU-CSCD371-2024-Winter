@@ -4,7 +4,7 @@ namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
-    public void GetData_Head_Successful()
+    public void GetDataHeadSuccessful()
     {
         Node<string> list=new Node<string>("IAmHead");
         Assert.Equal("IAmHead", list.GetData());
