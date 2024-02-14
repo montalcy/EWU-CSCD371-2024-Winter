@@ -19,7 +19,6 @@ public class NodeTests
     [Fact]
     public void GetDataHeadFailed()
     {
-
         Assert.Equal("true", "true");
     }
 
