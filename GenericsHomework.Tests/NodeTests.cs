@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
-
+#nullable enable
 namespace GenericsHomework.Tests;
 public class NodeTests
 {

@@ -4,11 +4,11 @@ namespace GenericsHomework;
 
 public class Node<T>
 {
-    private T Value { get; set; }
+    private T? Value { get; set; }
     public Node<T> Next { get; private set; }
     public int Size { get; set; }
 
-    public Node(T value)
+    public Node(T? value)
     {
         Value = value;
         Next = this;   
@@ -16,7 +16,7 @@ public class Node<T>
 
     public T GetData()
     {
-        return Value;
+        return Value!;
     }
 
     override public string ToString() => Value?.ToString() ?? throw new ArgumentNullException(nameof(Value));
@@ -28,7 +28,7 @@ public class Node<T>
     }
 
 
-    public void Append(T data)
+    public void Append(T? data)
     {
         Node<T> addition = new(data);
 
@@ -44,7 +44,7 @@ public class Node<T>
 
 
 
-    public bool Exists(T data)
+    public bool Exists(T? data)
     {
         Node<T> curr = this;
         if(curr.Value!.Equals(data))
