@@ -11,8 +11,7 @@ public class Node<T>
     public Node(T value)
     {
         Value = value;
-        Next = this;
-        Size = 0;
+        Next = this;   
     }
 
     public T GetData()
