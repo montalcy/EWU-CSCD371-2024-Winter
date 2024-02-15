@@ -5,7 +5,7 @@ namespace GenericsHomework;
 public class Node<T>
 {
     private T Value { get; set; }
-    public Node<T>? Next { get; private set; }
+    public Node<T> Next { get; private set; }
     public int Size { get; set; }
 
     public Node(T value)
@@ -47,14 +47,15 @@ public class Node<T>
 
     public bool Exists(T data)
     {
-        Node<T>? curr = this;
-        if(curr.GetData()!.Equals(data))
-            throw new ArgumentException(data + "already exists!");
-        while (curr!.Next!=this)
+        Node<T> curr = this;
+        if(curr.Value!.Equals(data))
+            return true;
+        curr = curr.Next;
+        while (curr!=this)
         {
-            if (curr.GetData()!.Equals(data))
+            if (curr.Value!.Equals(data))
             {
-                throw new ArgumentException(data + "already exists!");
+                return true;
             }
             curr = curr.Next;
         }

@@ -23,39 +23,20 @@ public class NodeTests
         Assert.Throws<ArgumentNullException>(() => list.ToString());
     }
 
-    //[Fact]
-    //public void Append_AlreadyExists_ThrowsException()
-    //{
-    //    Node<string> list = new("IamHead");
-    //    list.Append("IamNext");
-    //    list.Append("IamNextNext");
-    //    Assert.Throws<ArgumentException>(list.Exists("IamHead"));
-    //    Assert.Throws<ArgumentException>(() => list.Exists("IamNext"));
-    //    Assert.Throws<ArgumentException>(() => list.Exists("IamNextNext"));
-    //}
+    [Fact]
+    public void Append_AlreadyExists_ThrowsException()
+    {
+        Node<string> list = new("IamHead");
+        Assert.Throws<ArgumentException>(()=>list.Append("IamHead"));
+    }
 
-    //[Fact]
-    //public void Exists_AlreadyExists_ThrowsException()
-    //{
-    //    Node<string> list = new("IamHead");
-    //    list.Append("IamNext");
-    //    list.Append("IamNextNext");
-    //    Assert.Throws<ArgumentException>(()=>list.Exists("IamHead"));
-    //    Assert.Throws<ArgumentException>(() => list.Exists("IamNext"));
-    //    Assert.Throws<ArgumentException>(() => list.Exists("IamNextNext"));
-    //}
-
-
-    //[Fact]
-    //public void Remove_ClearsAllButCurrent_Successful()
-    //{
-    //    Node<string> list = new("IAmHead");
-    //    list.Append("imnext");
-    //    list.Append("nexttonext");
-    //    list.Append("last");
-    //    list.Clear();
-    //    Assert.Equal(list.Next.GetData(), list.GetData());
-    //}
+    [Fact]
+    public void Exists_AlreadyExists_True()
+    {
+        Node<string> list = new("IamHead");
+        bool exists=list.Exists("IamHead");
+        Assert.True(exists);
+    }
 
     [Fact]
     public void Size_AppendingThree_Success()
