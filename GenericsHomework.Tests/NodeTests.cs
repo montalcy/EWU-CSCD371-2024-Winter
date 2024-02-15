@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
-#nullable enable
+
 namespace GenericsHomework.Tests;
 public class NodeTests
 {
@@ -20,7 +20,9 @@ public class NodeTests
     public void AppendAlreadyExistsThrowsException()
     {
         Node<string> list = new("IamHead");
+        list.Append("Hola");
         Assert.Throws<ArgumentException>(()=>list.Append("IamHead"));
+        Assert.Throws<ArgumentException>(() => list.Append("Hola"));
     }
 
     [Fact]
@@ -29,6 +31,14 @@ public class NodeTests
         Node<string> list = new("IamHead");
         bool exists=list.Exists("IamHead");
         Assert.True(exists);
+    }
+
+    [Fact]
+    public void ExistsDesNotExistsFalse()
+    {
+        Node<string> list = new("IamHead");
+        bool exists = list.Exists("head");
+        Assert.False(exists);
     }
 
     [Fact]
@@ -42,7 +52,9 @@ public class NodeTests
     public void ToStringValueToStringSuccess()
     {
         Node<string> list = new("start");
+        Node<string> list2 = new("last");
         Assert.Equal("start", list.ToString());
+        Assert.Equal("last", list2.ToString());
     }
 
     [Fact]
@@ -57,7 +69,14 @@ public class NodeTests
         Assert.Equal("start", list.GetData());
     }
 
-
+    [Fact]
+    public void ClearFromSize1ClearedSuccess()
+    {
+        Node<string> list = new("start");
+        list.Clear();
+        Assert.True(list.Next.Equals(list));
+        Assert.Equal("start", list.GetData());
+    }
 
     [Fact]
     public void AppendNextNodeSuccessful()
