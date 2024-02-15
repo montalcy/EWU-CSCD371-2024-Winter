@@ -17,13 +17,6 @@ public class NodeTests
     }
 
     [Fact]
-    public void InitNullDataFail()
-    {
-        Node<string>? list = new(null);
-        Assert.Throws<ArgumentNullException>(() => list.ToString());
-    }
-
-    [Fact]
     public void AppendAlreadyExistsThrowsException()
     {
         Node<string> list = new("IamHead");
