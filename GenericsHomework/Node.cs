@@ -6,7 +6,6 @@ public class Node<T>
 {
     private T? Value { get; set; }
     public Node<T> Next { get; private set; }
-    public int Size { get; set; }
 
     public Node(T? value)
     {
@@ -24,7 +23,6 @@ public class Node<T>
     public void Clear()
     {
         Next = this;
-        Size = 1;
     }
 
 
@@ -39,7 +37,6 @@ public class Node<T>
 
         addition.Next = this.Next;
         Next = addition;
-        Size++;
         }
 
 

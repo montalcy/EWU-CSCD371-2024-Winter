@@ -39,17 +39,6 @@ public class NodeTests
     }
 
     [Fact]
-    public void SizeAppendingThreeSuccess()
-    {
-        Node<string> list = new("iamhead");
-        list.Append("nextnode");
-        list.Append("next");
-        list.Append("last");
-        Assert.Equal(3, list.Size);
-    }
-
-
-    [Fact]
     public void ValueinitMatchesSuccess()
     {
         Node<string> list = new("start");
