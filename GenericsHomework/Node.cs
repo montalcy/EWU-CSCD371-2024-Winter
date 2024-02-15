@@ -4,58 +4,31 @@ namespace GenericsHomework;
 
 public class Node<T>
 {
-    private T _value { get; set; }
-    public Node<T>? next { get; set; }
-    public int Size { get; private set; }
-    private Node<T>? Head { get; set; }
+    private T Value { get; set; }
+    public Node<T>? Next { get; private set; }
+    public int Size { get; set; }
 
     public Node(T value)
     {
-        _value = value;
-        if (Size == 1) { next = Head; }
-        else { next = this; };
+        Value = value;
+        Next = this;
+        Size = 1;
     }
 
     public T GetData()
     {
-        return _value;
+        return Value;
     }
 
-    override public string ToString()
-    {
-        Node<T>? current = Head;
-        string list = "";
-        while (current!.next != Head)
-        {
-            list += current.GetData();
-        }
-
-        return "Your linked list: " + list;
-    }
+    override public string ToString() => Value?.ToString() ?? throw new ArgumentNullException(nameof(Value));
 
     public void Clear()
     {
-        if (this.next != null)
-        {
-            this.next = null;
-        }
+        //if (this.next != null)
+        //{
+        //    this.next = null;
+        //}
     }
-
-
-    public void RemoveAll()
-    {
-        Node<T>? curr = Head;
-        Node<T> prev;
-        while (curr!.next!.next != Head)
-        {
-            prev = curr;
-            curr.next = curr.next.next;
-            curr = curr.next;
-        }
-        curr.next = curr.next.next;
-    }
-
-
 
 
     public void Append(T data)
