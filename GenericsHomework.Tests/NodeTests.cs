@@ -10,28 +10,28 @@ namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
-    public void Init_DataHead_Successful()
+    public void InitDataHeadSuccessful()
     {
         Node<string> list = new("IAmHead");
         Assert.Equal("IAmHead", list.GetData());
     }
 
     [Fact]
-    public void Init_NullData_Fail()
+    public void InitNullDataFail()
     {
         Node<string> list = new(null);
         Assert.Throws<ArgumentNullException>(() => list.ToString());
     }
 
     [Fact]
-    public void Append_AlreadyExists_ThrowsException()
+    public void AppendAlreadyExistsThrowsException()
     {
         Node<string> list = new("IamHead");
         Assert.Throws<ArgumentException>(()=>list.Append("IamHead"));
     }
 
     [Fact]
-    public void Exists_AlreadyExists_True()
+    public void ExistsAlreadyExistsTrue()
     {
         Node<string> list = new("IamHead");
         bool exists=list.Exists("IamHead");
@@ -39,7 +39,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void Size_AppendingThree_Success()
+    public void SizeAppendingThreeSuccess()
     {
         Node<string> list = new("iamhead");
         list.Append("nextnode");
@@ -50,21 +50,21 @@ public class NodeTests
 
 
     [Fact]
-    public void Value_initMatches_Success()
+    public void ValueinitMatchesSuccess()
     {
         Node<string> list = new("start");
         Assert.Equal("start", list.GetData());
     }
 
     [Fact]
-    public void ToString_ValueToString_Success()
+    public void ToStringValueToStringSuccess()
     {
         Node<string> list = new("start");
         Assert.Equal("start", list.ToString());
     }
 
     [Fact]
-    public void Clear_AllCleared_Success()
+    public void ClearAllClearedSuccess()
     {
         Node<string> list = new("start");
         list.Append("nextnode");
@@ -78,7 +78,7 @@ public class NodeTests
 
 
     [Fact]
-    public void Append_NextNode_Successful()
+    public void AppendNextNodeSuccessful()
     {
         Node<string> list = new("iamhead");
         list.Append("nextnode");
