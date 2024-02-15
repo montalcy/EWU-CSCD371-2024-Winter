@@ -12,7 +12,7 @@ public class Node<T>
     {
         Value = value;
         Next = this;
-        Size = 1;
+        Size = 0;
     }
 
     public T GetData()
@@ -35,11 +35,11 @@ public class Node<T>
 
         if (Exists(data))
         {
-            throw new ArgumentException("Already Exists");
+            throw new ArgumentException($"{data} already exists");
         }
 
-        Next = addition;
         addition.Next = this.Next;
+        Next = addition;
         Size++;
         }
 
@@ -49,13 +49,12 @@ public class Node<T>
     {
         Node<T>? curr = this;
         if(curr.GetData()!.Equals(data))
-            return true;
-        curr = curr.Next;
+            throw new ArgumentException(data + "already exists!");
         while (curr!.Next!=this)
         {
             if (curr.GetData()!.Equals(data))
             {
-                return true;
+                throw new ArgumentException(data + "already exists!");
             }
             curr = curr.Next;
         }
