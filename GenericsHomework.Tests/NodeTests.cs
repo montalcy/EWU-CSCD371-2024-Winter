@@ -19,7 +19,7 @@ public class NodeTests
     [Fact]
     public void InitNullDataFail()
     {
-        Node<string> list = new(null);
+        Node<string>? list = new(null);
         Assert.Throws<ArgumentNullException>(() => list.ToString());
     }
 
