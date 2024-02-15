@@ -24,55 +24,40 @@ public class Node<T>
 
     public void Clear()
     {
-        //if (this.next != null)
-        //{
-        //    this.next = null;
-        //}
+        Next = this;
+        Size = 1;
     }
 
 
     public void Append(T data)
     {
-        Node<T>? curr = Head;
         Node<T> addition = new(data);
 
         if (Exists(data))
         {
-            throw new ArgumentException("This already exists in the list");
+            throw new ArgumentException("Already Exists");
         }
-        else
-        {
-            if (Head!.next! == Head)
-            {
-                Head = addition;
-                Size = 1;
-            }
-            else
-            {
-                while (next != Head)
-                {
-                    curr = curr!.next!;
-                }
-                curr!.next = addition;
-                Size++;
-                addition.next = Head;
-            }
+
+        Next = addition;
+        addition.Next = this.Next;
+        Size++;
         }
 
 
-
-    }
 
     public bool Exists(T data)
     {
-        Node<T>? curr = Head;
-        while (curr != Head)
+        Node<T>? curr = this;
+        if(curr.GetData()!.Equals(data))
+            return true;
+        curr = curr.Next;
+        while (curr!.Next!=this)
         {
-            if (curr!._value!.Equals(data))
+            if (curr.GetData()!.Equals(data))
             {
                 return true;
             }
-            curr = curr!.next!;
+            curr = curr.Next;
         }
         return false;
     }
