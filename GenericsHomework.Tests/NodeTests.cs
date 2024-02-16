@@ -11,14 +11,13 @@ namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
-    public void InitDataHeadSuccessful()
+    public void Init_DataHead_Successful()
     {
         Node<string> list = new("IAmHead");
         Assert.Equal("IAmHead", list.GetData());
     }
-
     [Fact]
-    public void AppendAlreadyExistsThrowsException()
+    public void Append_AlreadyExists_ThrowsException()
     {
         Node<string> list = new("IamHead");
         list.Append("Hola");
@@ -27,7 +26,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ExistsAlreadyExistsTrue()
+    public void Exists_AlreadyExists_True()
     {
         Node<string> list = new("IamHead");
         bool exists=list.Exists("IamHead");
@@ -35,7 +34,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ExistsDesNotExistsFalse()
+    public void Exists_DoesNotExists_False()
     {
         Node<string> list = new("IamHead");
         bool exists = list.Exists("head");
@@ -43,7 +42,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ToStringValueToStringSuccess()
+    public void ToString_ValueToString_Success()
     {
         Node<string> list = new("start");
         Node<string> list2 = new("last");
@@ -52,7 +51,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ClearAllClearedSuccess()
+    public void Clear_AllCleared_Success()
     {
         Node<string> list = new("start");
         list.Append("nextnode");
@@ -64,7 +63,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ClearFromSize1ClearedSuccess()
+    public void Clear_FromSize1_ClearedSuccess()
     {
         Node<string> list = new("start");
         list.Clear();
@@ -73,7 +72,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void AppendNextNodeSuccessful()
+    public void Append_NextNode_Successful()
     {
         Node<string> list = new("iamhead");
         list.Append("nextnode");
@@ -85,7 +84,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void AppendAlreadyExistsDoesntChangeOurNextNode() {
+    public void Append_AlreadyExists_DoesntChangeOurNextNode() {
         Node<string> node = new("first");
         node.Append("hello");
         Assert.Equal("hello", node.Next.GetData());

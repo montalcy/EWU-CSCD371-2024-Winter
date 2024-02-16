@@ -21,9 +21,9 @@ public class Node<T>
     override public string ToString() => Value!.ToString() ?? throw new ArgumentException(nameof(Value));
 
 
-    //Given there is a circular list of items, provide a comment to indicate whether you
-    //need to worry about garbage collection because all the items point to each other and
-    //therefore may never be garbage collected
+    //We do not need to worry about the garbage collection because in our method, we are self containing the list
+    //by asetting the next to itself, since none of the other nodes will have anything linking them together
+    //c# garbage collector will end up cleaning those up
 
     public void Clear()
     {
