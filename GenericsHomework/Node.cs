@@ -18,7 +18,10 @@ public class Node<T>
         return Value;
     }
 
-    override public string ToString() => Value!.ToString() ?? throw new ArgumentException(nameof(Value));
+    override public string ToString()
+    {
+        return Value?.ToString() ?? throw new ArgumentNullException(nameof(Value));
+    }
 
 
     //We do not need to worry about the garbage collection because in our method, we are self containing the list
