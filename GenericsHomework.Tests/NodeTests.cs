@@ -16,6 +16,7 @@ public class NodeTests
         Node<string> list = new("IAmHead");
         Assert.Equal("IAmHead", list.GetData());
     }
+
     [Fact]
     public void Append_AlreadyExists_ThrowsException()
     {
