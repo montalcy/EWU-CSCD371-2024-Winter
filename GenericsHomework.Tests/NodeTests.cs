@@ -10,6 +10,7 @@ using Xunit.Abstractions;
 namespace GenericsHomework.Tests;
 public class NodeTests
 {
+    // NOTE: Had to remove Underscores from test method names as it was giving build error on git, we know they are needed but that us the solution to get passed that what I am guessing in unintended behavior.
     [Fact]
     public void InitDataHeadSuccessful()
     {
