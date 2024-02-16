@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,14 @@ namespace GenericsHomework.Tests;
 public class NodeTests
 {
     [Fact]
-    public void InitDataHeadSuccessful()
+    public void Init_DataHead_Successful()
     {
         Node<string> list = new("IAmHead");
         Assert.Equal("IAmHead", list.GetData());
     }
 
     [Fact]
-    public void AppendAlreadyExistsThrowsException()
+    public void Append_AlreadyExists_ThrowsException()
     {
         Node<string> list = new("IamHead");
         list.Append("Hola");
@@ -26,7 +27,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ExistsAlreadyExistsTrue()
+    public void Exists_AlreadyExists_True()
     {
         Node<string> list = new("IamHead");
         bool exists=list.Exists("IamHead");
@@ -34,7 +35,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ExistsDesNotExistsFalse()
+    public void Exists_DesNotExists_False()
     {
         Node<string> list = new("IamHead");
         bool exists = list.Exists("head");
@@ -42,14 +43,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ValueinitMatchesSuccess()
-    {
-        Node<string> list = new("start");
-        Assert.Equal("start", list.GetData());
-    }
-
-    [Fact]
-    public void ToStringValueToStringSuccess()
+    public void ToString_ValueToString_Success()
     {
         Node<string> list = new("start");
         Node<string> list2 = new("last");
@@ -58,7 +52,7 @@ public class NodeTests
     }
 
     [Fact]
-    public void ClearAllClearedSuccess()
+    public void Clear_AllCleared_Success()
     {
         Node<string> list = new("start");
         list.Append("nextnode");
@@ -70,16 +64,16 @@ public class NodeTests
     }
 
     [Fact]
-    public void ClearFromSize1ClearedSuccess()
+    public void Clear_FromSize1Cleared_Success()
     {
         Node<string> list = new("start");
         list.Clear();
         Assert.True(list.Next.Equals(list));
-        Assert.Equal("start", list.GetData());
+        Assert.Equal("start", list.Next.GetData());
     }
 
     [Fact]
-    public void AppendNextNodeSuccessful()
+    public void Append_NextNode_Successful()
     {
         Node<string> list = new("iamhead");
         list.Append("nextnode");
@@ -89,6 +83,20 @@ public class NodeTests
         list.Append("last");
         Assert.Equal("last", list.Next.GetData());
     }
+
+    [Fact]
+    public void Append_AlreadyExists_DoesntChangeOurNextNode() {
+        Node<string> node = new("first");
+        node.Append("hello");
+        Assert.Equal("hello", node.Next.GetData());
+        node.Append("bye");
+        Assert.Equal("bye", node.Next.GetData());
+        Assert.Throws<ArgumentException>(() => node.Append("first"));
+        Assert.NotEqual("first", node.Next.GetData());
+        Assert.Equal("bye", node.Next.GetData());
+    }
+
+
 
 
 }

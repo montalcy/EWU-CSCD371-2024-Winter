@@ -18,7 +18,12 @@ public class Node<T>
         return Value;
     }
 
-    override public string ToString() => Value?.ToString() ?? throw new ArgumentNullException(nameof(Value));
+    override public string ToString() => Value!.ToString() ?? throw new ArgumentException(nameof(Value));
+
+
+    //Given there is a circular list of items, provide a comment to indicate whether you
+    //need to worry about garbage collection because all the items point to each other and
+    //therefore may never be garbage collected
 
     public void Clear()
     {
