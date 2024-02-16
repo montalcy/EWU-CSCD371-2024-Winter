@@ -10,7 +10,7 @@ public class Node<T>
     public Node(T value)
     {
         Value = value;
-        Next = this;   
+        Next = this;
     }
 
     public T GetData()
@@ -42,17 +42,17 @@ public class Node<T>
 
         addition.Next = this.Next;
         Next = addition;
-        }
+    }
 
 
 
     public bool Exists(T data)
     {
         Node<T> curr = this;
-        if(curr.Value!.Equals(data))
+        if (curr.Value!.Equals(data))
             return true;
         curr = curr.Next;
-        while (curr!=this)
+        while (curr != this)
         {
             if (curr.Value!.Equals(data))
             {

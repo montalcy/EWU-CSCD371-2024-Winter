@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace GenericsHomework.Tests;
 public class NodeTests
@@ -22,7 +16,7 @@ public class NodeTests
     {
         Node<string> list = new("IamHead");
         list.Append("Hola");
-        Assert.Throws<ArgumentException>(()=>list.Append("IamHead"));
+        Assert.Throws<ArgumentException>(() => list.Append("IamHead"));
         Assert.Throws<ArgumentException>(() => list.Append("Hola"));
     }
 
@@ -30,7 +24,7 @@ public class NodeTests
     public void ExistsAlreadyExistsTrue()
     {
         Node<string> list = new("IamHead");
-        bool exists=list.Exists("IamHead");
+        bool exists = list.Exists("IamHead");
         Assert.True(exists);
     }
 
@@ -85,7 +79,8 @@ public class NodeTests
     }
 
     [Fact]
-    public void AppendAlreadyExistsDoesntChangeOurNextNode() {
+    public void AppendAlreadyExistsDoesntChangeOurNextNode()
+    {
         Node<string> node = new("first");
         node.Append("hello");
         Assert.Equal("hello", node.Next.GetData());
@@ -94,6 +89,14 @@ public class NodeTests
         Assert.Throws<ArgumentException>(() => node.Append("first"));
         Assert.NotEqual("first", node.Next.GetData());
         Assert.Equal("bye", node.Next.GetData());
+    }
+
+    [Fact]
+    public void toStringPrintToString()
+    {
+        Node<string> node = new("first");
+        string txt = node.ToString();
+        Assert.Equal("first", txt);
     }
 
 
