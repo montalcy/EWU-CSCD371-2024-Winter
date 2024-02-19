@@ -22,6 +22,12 @@ public class Calculator
     public static int Multiply(int firstValue, int secondValue) => (firstValue * secondValue);
     public static int Divide(int firstValue, int secondValue) => secondValue != 0 ? (firstValue / secondValue) : throw new ArgumentException("Cant divide by zero");
 
+    public bool TryCalculate(string expression, out int solution)
+    {
+        solution = 0;
+        return false;
+    }
+
 }
 
 /*
