@@ -12,4 +12,8 @@
 	<LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.7.0" />
+  </ItemGroup>
+
 </Project>
