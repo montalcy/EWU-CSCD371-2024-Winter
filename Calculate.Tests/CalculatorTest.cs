@@ -11,28 +11,28 @@ namespace Calculate.Tests;
 public class CalculatorTest
 {
     [Fact]
-    public void Add_TwoValues_Successful()
+    public void AddTwoValuesSuccessful()
     {
         int solution = Calculator.Add(2, 2);
         Assert.Equal(4, solution);
     }
 
     [Fact]
-    public void Subtract_TwoValues_Successful()
+    public void SubtractTwoValuesSuccessful()
     {
         int solution = Calculator.Subtract(2, 2);
         Assert.Equal(0, solution);
     }
 
     [Fact]
-    public void Divide_TwoValues_Successful()
+    public void DivideTwoValuesSuccessful()
     {
         int solution = Calculator.Divide(2,2);
         Assert.Equal(1, solution);
     }
 
     [Fact]
-    public void Multiply_TwoValues_Successful()
+    public void MultiplyTwoValuesSuccessful()
     {
         int solution = Calculator.Multiply(2, 2);
         Assert.Equal(4, solution);
