@@ -24,7 +24,6 @@ public class Calculator
     public bool TryCalculate(string expression, out int solution)
     {
         solution = 0;
-        solution = null;
         return false;
     }
 }
