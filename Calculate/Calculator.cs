@@ -24,7 +24,7 @@ public class Calculator
     public bool TryCalculate(string expression, out int solution)
     {
         solution = 0;
-        string[] inputs= expression.Split(' ');
+        string[] inputs = expression.Split(' ');
         if (inputs.Length != 3) return false;
         if (!int.TryParse(inputs[0], out int firstint)) return false;
         if (!int.TryParse(inputs[2], out int secondint)) return false;

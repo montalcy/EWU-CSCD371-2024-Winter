@@ -27,7 +27,7 @@ public class CalculatorTest
     [Fact]
     public void Divide_TwoValues_Successful()
     {
-        int solution = Calculator.Divide(2,2);
+        int solution = Calculator.Divide(2, 2);
         Assert.Equal(1, solution);
     }
 
@@ -41,7 +41,7 @@ public class CalculatorTest
     [Fact]
     public void Divide_ByZero_Fails()
     {
-        Assert.Throws<ArgumentException>(()=> Calculator.Divide(2, 0));
+        Assert.Throws<ArgumentException>(() => Calculator.Divide(2, 0));
     }
 
     [Fact]
