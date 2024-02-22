@@ -11,41 +11,41 @@ namespace Calculate.Tests;
 public class CalculatorTest
 {
     [Fact]
-    public void AddTwoValuesSuccessful()
+    public void Add_TwoValues_Successful()
     {
         int solution = Calculator.Add(2, 2);
         Assert.Equal(4, solution);
     }
 
     [Fact]
-    public void SubtractTwoValuesSuccessful()
+    public void Subtract_TwoValues_Successful()
     {
         int solution = Calculator.Subtract(2, 2);
         Assert.Equal(0, solution);
     }
 
     [Fact]
-    public void DivideTwoValuesSuccessful()
+    public void Divide_TwoValues_Successful()
     {
         int solution = Calculator.Divide(2,2);
         Assert.Equal(1, solution);
     }
 
     [Fact]
-    public void MultiplyTwoValuesSuccessful()
+    public void Multiply_TwoValues_Successful()
     {
         int solution = Calculator.Multiply(2, 2);
         Assert.Equal(4, solution);
     }
 
     [Fact]
-    public void DivideByZeroFails()
+    public void Divide_ByZero_Fails()
     {
         Assert.Throws<ArgumentException>(()=> Calculator.Divide(2, 0));
     }
 
     [Fact]
-    public void TryCalculateByZeroFails()
+    public void TryCalculate_ByZero_Fails()
     {
         int res;
         Calculator calc = new();
@@ -58,7 +58,7 @@ public class CalculatorTest
     [InlineData(0, "2 - 2")]
     [InlineData(1, "3 / 3")]
     [InlineData(9, "3 * 3")]
-    public void TryCalculateGivenValidInputs(int expect, string expression)
+    public void TryCalculate_GivenValidDifferentInputs_Success(int expect, string expression)
     {
         int res;
         Calculator calculator = new();
@@ -68,7 +68,7 @@ public class CalculatorTest
     }
 
     [Fact]
-    public void TryCalculateGivenInvalidInputs()
+    public void TryCalculate_GivenInvalidInputs_FalseSuccess()
     {
         int res;
         Calculator calculator = new();
