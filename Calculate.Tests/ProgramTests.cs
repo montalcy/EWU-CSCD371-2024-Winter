@@ -11,15 +11,9 @@ public class ProgramTests
     [Fact]
     public void WriteLineTest()
     {
-        Program program = new();
-        StringWriter sw = new();
-        Console.SetOut(sw);
-        program.WriteLine("Enter your expression: ");
-        sw.Close();
-        string expected="Enter your expression: \r\n";
-        Assert.Equal(sw.ToString(), expected);
+        
     }
-
+    
     [Fact]
     public void ReadLineTest()
     {

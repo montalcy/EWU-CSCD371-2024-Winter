@@ -13,7 +13,7 @@ public class Program
     public Func<string?> ReadLine { get; init; } = System.Console.ReadLine;
 
     public Program() { }
-    static void Main(string[] args)
+    public static void Main()
     {
         Program Pro = new();
         Calculator calc = new();
