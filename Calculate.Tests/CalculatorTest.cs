@@ -44,6 +44,13 @@ public class CalculatorTest
         Assert.Throws<ArgumentException>(()=> Calculator.Divide(2, 0));
     }
 
+    [Fact]
+    public void TryCalculateByZeroFails()
+    {
+        int res;
+        Calculator calc = new();
+        Assert.Throws<ArgumentException>(() => calc.TryCalculate("2 / 0", out res));
+    }
 
     [Theory]
     [InlineData(3, "1 + 2")]
@@ -57,6 +64,15 @@ public class CalculatorTest
         Calculator calculator = new();
         calculator.TryCalculate(expression, out res);
         Assert.Equal(expect, res);
+        Assert.True(calculator.TryCalculate(expression, out res));
+    }
+
+    [Fact]
+    public void TryCalculateGivenInvalidInputs()
+    {
+        int res;
+        Calculator calculator = new();
+        Assert.False(calculator.TryCalculate("2 &", out res));
     }
 
 }
