@@ -8,7 +8,7 @@ public class ProgramTests
 {
 
     [Fact]
-    public void WriteLineTest()
+    public void Write_Line_Test()
     {
         StringWriter output = new();
         Console.SetOut(output);
@@ -20,7 +20,7 @@ public class ProgramTests
     }
     
     [Fact]
-    public void ReadLineTest()
+    public void Read_Line_Test()
     {
         string writting = "writting";
         string actual = "actual";
