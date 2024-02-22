@@ -73,6 +73,33 @@ public class CalculatorTest
         int res;
         Calculator calculator = new();
         Assert.False(calculator.TryCalculate("2 &", out res));
+        Assert.False(calculator.TryCalculate("2 + 3 + 4 + 6", out res));
+    }
+
+    [Theory]
+    [InlineData('$')]
+    [InlineData('#')]
+    [InlineData('@')]
+    [InlineData('T')]
+    [InlineData('1')]
+
+    public void MathematicalOperation_GivenInvalidInputs_DoesNotContainSuccess(char operation)
+    {
+        Calculator calculator = new();
+        IReadOnlyDictionary<char, Func<int, int, int>> operations = calculator.MathematicalOperations;
+        Assert.DoesNotContain(operation, operations);
+    }
+
+    [Theory]
+    [InlineData('/')]
+    [InlineData('*')]
+    [InlineData('+')]
+    [InlineData('-')]
+    public void MathematicalOperation_GivenValidInputs_DoesContainSuccess(char operation)
+    {
+        Calculator calculator = new();
+        IReadOnlyDictionary<char, Func<int, int, int>> operations = calculator.MathematicalOperations;
+        Assert.Contains(operation, operations);
     }
 
 }
