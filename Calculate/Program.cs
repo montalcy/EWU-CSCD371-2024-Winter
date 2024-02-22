@@ -24,10 +24,12 @@ public class Program
         {
             Pro.WriteLine("Enter your expression: ");
             input = Pro.ReadLine()!;
+
             if (calc.TryCalculate(input, out solution))
             {
                 Pro.WriteLine($"Answer: {solution}");
             }
+
         } while (input == null || !calc.TryCalculate(input, out solution));
 
 

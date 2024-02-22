@@ -44,11 +44,19 @@ public class CalculatorTest
         Assert.Throws<ArgumentException>(()=> Calculator.Divide(2, 0));
     }
 
-    //[Fact]
-    //public void TryCalculateWithValidInputEquals()
-    //{
-    //    Calculator cals = new();
-    //    cals.TryCalculate("2 + 3", out int answer);
-    //    Assert.Equal(5, answer);
-    //}
+
+    [Theory]
+    [InlineData(3, "1 + 2")]
+    [InlineData(4, "2 + 2")]
+    [InlineData(0, "2 - 2")]
+    [InlineData(1, "3 / 3")]
+    [InlineData(9, "3 * 3")]
+    public void TryCalculateGivenValidInputs(int expect, string expression)
+    {
+        int res;
+        Calculator calculator = new();
+        calculator.TryCalculate(expression, out res);
+        Assert.Equal(expect, res);
+    }
+
 }
