@@ -102,4 +102,34 @@ public class CalculatorTest
         Assert.Contains(operation, operations);
     }
 
+
+    [Theory]
+    [InlineData("notanumber + 2")] // First part cannot be parsed as integer
+    [InlineData("1 + notanumber")] // Second part cannot be parsed as integer
+    public void TryCalculate_WhenFirstOrSecondPartCannotBeParsedAsInteger_ReturnsFalse(string expression)
+    {
+        
+        var calculator = new Calculator();
+
+        
+        var result = calculator.TryCalculate(expression, out _);
+
+        
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void TryCalculate_WhenOperatorIsNotSupported_ReturnsFalse()
+    {
+       
+        var calculator = new Calculator();
+        string expression = "1 % 2"; // % is not a supported operator
+
+        
+        var result = calculator.TryCalculate(expression, out _);
+
+        
+        Assert.False(result);
+    }
+
 }
