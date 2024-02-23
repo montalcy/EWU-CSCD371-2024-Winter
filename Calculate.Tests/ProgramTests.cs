@@ -2,6 +2,7 @@
 using Xunit;
 using Calculate;
 using System;
+using Moq;
 
 namespace Calculate.Tests;
 public class ProgramTests
